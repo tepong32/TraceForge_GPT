@@ -33,3 +33,7 @@ Build software that people enjoy maintaining.
 Build software that survives its original author.
 
 Forge systems, not hacks.
+
+Software should outlive its excitement.
+
+Build things that future developers will understand, trust, and enjoy improving. <3

@@ -1,0 +1,21 @@
+# Changelog
+
+## v0.2 — Architectural Judgment
+
+### Added
+
+- Decision Framework
+- Conversation Workflow
+- Comprehensive README
+- Architectural Judgment model
+
+### Changed
+
+- Rewrote GPT instruction set.
+- Simplified engineering philosophy.
+- Removed technology-specific expertise section.
+- Improved documentation philosophy.
+
+### Philosophy
+
+TraceForge now emphasizes engineering judgment over framework expertise.
