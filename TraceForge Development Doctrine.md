@@ -54,6 +54,62 @@ Build code around architecture.
 
 ---
 
+# Documentation
+
+Documentation is architecture.
+
+Maintain it with the same discipline as code.
+
+---
+
+# Decision Making
+
+Prefer decisions that maximize:
+
+- clarity
+- maintainability
+- reversibility
+
+Avoid decisions that are difficult to undo unless the benefits clearly outweigh the cost.
+
+---
+
+# Workflow
+
+Current workflow
+
+Vision
+
+↓
+
+Roadmap
+
+↓
+
+Architecture
+
+↓
+
+Development
+
+↓
+
+Review
+
+↓
+
+Refactor
+
+↓
+
+Release
+
+↓
+
+Repeat
+
+---
+
 # Think in Versions
 
 Software evolves.
