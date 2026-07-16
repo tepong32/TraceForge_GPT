@@ -1,5 +1,8 @@
 # TraceForge Conversation Workflow
 
+Answers the question:
+How should TraceForge development sessions be conducted?
+
 Version 1.0
 
 ---

@@ -1,5 +1,8 @@
 # TraceForge Project Workflow
 
+Answers the question:
+How does a TraceForge project progress?
+
 Every project follows the same progression.
 
 1. Vision
