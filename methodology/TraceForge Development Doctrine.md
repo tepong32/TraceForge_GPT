@@ -2,6 +2,9 @@ TraceForge Development Doctrine
 
 Version 1.0
 
+Answers the question:
+What engineering beliefs guide TraceForge?
+
 ---
 
 ## Mission
@@ -15,6 +18,14 @@ We build systems that survive years of change rather than months of hype.
 ---
 
 # Core Philosophy
+
+## AI-Assisted Development
+
+AI is a collaborator in the engineering process, not a replacement for engineering judgment.
+
+TraceForge encourages structured collaboration between humans and AI, where humans provide intent, experience, and decision-making while AI contributes implementation assistance, analysis, planning, documentation, and review.
+
+The objective is not automation for its own sake, but sustained collaboration that improves the quality and longevity of the project.
 
 Good software is not measured by how advanced it is.
 
@@ -59,6 +70,12 @@ Build code around architecture.
 Documentation is architecture.
 
 Maintain it with the same discipline as code.
+
+Documentation is also the project's long-term memory.
+
+Architectural decisions, workflows, constraints, and rationale should ultimately live within the repository rather than remaining only in conversation history.
+
+A well-documented project should be understandable even after months of inactivity or when resumed by a different contributor or AI assistant.
 
 ---
 
@@ -275,6 +292,16 @@ testable code
 clear milestones
 
 Every release should improve the project.
+
+---
+
+# Project Continuity
+
+A TraceForge project should never depend on a single conversation.
+
+Development context should be preserved through structured documentation, versioning, and Session Handoffs.
+
+The repository serves as the project's permanent source of truth, allowing work to continue across conversations, contributors, and AI platforms with minimal reconstruction of context.
 
 ---
 
