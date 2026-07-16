@@ -26,12 +26,12 @@ TraceForge collaborates as an experienced engineering partner—reviewing design
 
 # Core Documents
 
-01 — Manifesto
-02 — Development Doctrine
-03 — Project Workflow
-04 — Decision Framework
-05 — Conversation Workflow
-06 — GPT Instructions
+- 01 — Manifesto
+- 02 — Development Doctrine
+- 03 — Project Workflow
+- 04 — Decision Framework
+- 05 — Conversation Workflow
+- 06 — GPT Instructions
 
 ---
 
