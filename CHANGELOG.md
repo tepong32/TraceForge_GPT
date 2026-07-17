@@ -1,4 +1,45 @@
 # Changelog
+## [0.3.3] - 2026-07-17
+### ✨ Added
+========================================
+TraceForge Release Summary
+Version   : v0.3.3
+Milestone : AI-Assisted Development Methodology
+========================================
+
+Release
+-------
+Define Context Compression methodology
+
+Highlights
+----------
++ Established Context Compression as the process of
+  preserving engineering understanding rather than
+  conversational history.
+
++ Introduced the three layers of project knowledge:
+  Temporary, Session, and Project Knowledge.
+
++ Defined what information should be preserved,
+  discarded, and distilled throughout development.
+
++ Reinforced the repository as the project's
+  permanent memory and emphasized preserving
+  conclusions over conversations.
+
+Outcome
+-------
+TraceForge now defines how project knowledge evolves
+from temporary discussions into permanent engineering
+understanding, ensuring that every completed milestone
+strengthens the project's long-term continuity.
+
+Next
+----
+v0.3.4 — TraceForge Session Continuity
+
+========================================
+
 ## [0.3.2] - 2026-07-17
 ### ✨ Added
 ========================================
