@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # TraceForge AI Collaboration Guide
 
 **Answers the question:**
@@ -228,3 +229,4 @@ Other methodology documents describe:
 - how documentation is maintained.
 
 Together, they define the complete TraceForge development methodology.
+>>>>>>> 607b64fb5469e82dd037c50da26c59749b755896
