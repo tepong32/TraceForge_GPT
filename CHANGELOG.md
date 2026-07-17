@@ -1,9 +1,9 @@
 # Changelog
-## [0.2.1] - 2026-07-17
+## [0.3.1] - 2026-07-17
 ### ✨ Added
 ========================================
 TraceForge Rel.1ease Summary
-Version : v0.3
+Version : v0.3.1
 Milestone : AI-Assisted Development Methodology
 ========================================
 
