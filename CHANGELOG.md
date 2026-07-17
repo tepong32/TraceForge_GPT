@@ -1,4 +1,172 @@
 # Changelog
+## [0.3.4] - 2026-07-17
+### ✨ Added
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TraceForge v0.3.4
+Session Continuity
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Current Milestone
+AI-Assisted Development Methodology
+
+Completed
+✓ TraceForge Session Continuity
+
+This release establishes how development continues across
+multiple independent AI conversations without relying on
+complete conversational history.
+
+Introduced
+
+• Development Sessions
+  Defines sessions as bounded periods of focused engineering work
+  that contribute to the project's long-term evolution.
+
+• Session Boundaries
+  Establishes intentional stopping points to preserve clarity and
+  maintain development momentum.
+
+• Project Continuity
+  Defines the permanent knowledge that carries forward between
+  sessions while distinguishing it from temporary conversation.
+
+• Context Restoration
+  Establishes how new development sessions reconnect with the
+  project's current state and resume work naturally.
+
+• Session Continuity Package
+  Defines a concise engineering checkpoint containing the
+  information required to restore meaningful project context.
+
+• Relationship with Context Compression
+  Clarifies how permanent knowledge preservation and session
+  restoration work together to support long-term development.
+
+Result
+
+TraceForge now defines not only how projects are created,
+developed, and remembered, but also how they continue
+seamlessly across unlimited development sessions.
+
+The methodology now treats conversations as temporary
+workspaces while recognizing the repository as the project's
+authoritative source of truth.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## [0.3.3] - 2026-07-17
+### ✨ Added
+========================================
+TraceForge Release Summary
+Version   : v0.3.3
+Milestone : AI-Assisted Development Methodology
+========================================
+
+Release
+-------
+Define Context Compression methodology
+
+Highlights
+----------
++ Established Context Compression as the process of
+  preserving engineering understanding rather than
+  conversational history.
+
++ Introduced the three layers of project knowledge:
+  Temporary, Session, and Project Knowledge.
+
++ Defined what information should be preserved,
+  discarded, and distilled throughout development.
+
++ Reinforced the repository as the project's
+  permanent memory and emphasized preserving
+  conclusions over conversations.
+
+Outcome
+-------
+TraceForge now defines how project knowledge evolves
+from temporary discussions into permanent engineering
+understanding, ensuring that every completed milestone
+strengthens the project's long-term continuity.
+
+Next
+----
+v0.3.4 — TraceForge Session Continuity
+
+========================================
+
+## [0.3.2] - 2026-07-17
+### ✨ Added
+========================================
+TraceForge Release Summary
+Version   : v0.3.2
+Milestone : AI-Assisted Development Methodology
+========================================
+
+Release
+-------
+Establish AI Collaboration Guide
+
+Highlights
+----------
++ Defined the roles and responsibilities of both the
+  human developer and the AI development partner.
+
++ Established the collaboration philosophy centered on
+  understanding, architectural integrity, consistency,
+  and long-term maintainability.
+
++ Formalized the principles that guide AI behavior,
+  including proactive collaboration, knowledge
+  preservation, and constructive engineering feedback.
+
++ Clarified decision ownership by reinforcing that AI
+  provides recommendations while the human developer
+  retains final authority over the project.
+
+Outcome
+-------
+TraceForge now defines not only how projects and
+conversations progress, but also how humans and AI
+collaborate as long-term engineering partners.
+
+Next
+----
+v0.3.3 — TraceForge Context Compression
+
+========================================
+
+## [0.3.1] - 2026-07-17
+### ✨ Added
+========================================
+TraceForge Rel.1ease Summary
+Version : v0.3.1
+Milestone : AI-Assisted Development Methodology
+========================================
+
+Release
+-------
+Define Project & Conversation Workflows
+
+Highlights
+----------
++ Established the Project Workflow lifecycle.
++ Formalized the Conversation Workflow lifecycle.
++ Introduced Capture as a dedicated development phase.
++ Reinforced repository memory before session handoff.
+
+Outcome
+-------
+The methodology now defines both software evolution
+and human-AI collaboration, creating the operational
+foundation for all future TraceForge documents.
+
+Next
+----
+AI Collaboration Guide
+
+========================================
+
 ## [0.2.0] - 2026-07-15
 ### ✨ Added
 v0.2: Introduce Architectural Judgment methodology
