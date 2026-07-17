@@ -1,10 +1,8 @@
 # TraceForge Conversation Workflow
 
-<<<<<<< HEAD
 **Answers the question:**
 
 > **How should a TraceForge development conversation progress?**
->>>>>>> 607b64fb5469e82dd037c50da26c59749b755896
 
 ---
 
