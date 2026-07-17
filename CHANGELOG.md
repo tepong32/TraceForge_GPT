@@ -1,4 +1,59 @@
 # Changelog
+## [0.3.4] - 2026-07-17
+### ✨ Added
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TraceForge v0.3.4
+Session Continuity
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Current Milestone
+AI-Assisted Development Methodology
+
+Completed
+✓ TraceForge Session Continuity
+
+This release establishes how development continues across
+multiple independent AI conversations without relying on
+complete conversational history.
+
+Introduced
+
+• Development Sessions
+  Defines sessions as bounded periods of focused engineering work
+  that contribute to the project's long-term evolution.
+
+• Session Boundaries
+  Establishes intentional stopping points to preserve clarity and
+  maintain development momentum.
+
+• Project Continuity
+  Defines the permanent knowledge that carries forward between
+  sessions while distinguishing it from temporary conversation.
+
+• Context Restoration
+  Establishes how new development sessions reconnect with the
+  project's current state and resume work naturally.
+
+• Session Continuity Package
+  Defines a concise engineering checkpoint containing the
+  information required to restore meaningful project context.
+
+• Relationship with Context Compression
+  Clarifies how permanent knowledge preservation and session
+  restoration work together to support long-term development.
+
+Result
+
+TraceForge now defines not only how projects are created,
+developed, and remembered, but also how they continue
+seamlessly across unlimited development sessions.
+
+The methodology now treats conversations as temporary
+workspaces while recognizing the repository as the project's
+authoritative source of truth.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
 ## [0.3.3] - 2026-07-17
 ### ✨ Added
 ========================================
