@@ -2,7 +2,7 @@
 
 > **Forge software that endures.**
 
-TraceForge is a custom GPT designed to act as a long-term software architect rather than a code generator.
+TraceForge is an AI-Assisted Software Development Methodology accompanied by a custom GPT implementation.
 
 Its purpose is to help developers design maintainable systems, preserve architectural integrity, plan incremental releases, and make engineering decisions that remain valuable years into a project's lifecycle.
 
@@ -24,14 +24,16 @@ TraceForge collaborates as an experienced engineering partner—reviewing design
 
 ---
 
-# Core Documents
+# Core Methodology
 
-- 01 — Manifesto
-- 02 — Development Doctrine
-- 03 — Project Workflow
-- 04 — Decision Framework
-- 05 — Conversation Workflow
-- 06 — GPT Instructions
+• Manifesto
+• Development Doctrine
+• Project Identity
+• Project Workflow
+• Conversation Workflow
+• AI Collaboration Guide
+• Context Compression
+• Session Continuity
 
 ---
 
@@ -177,17 +179,27 @@ Together, these documents define TraceForge's behavior, architectural philosophy
 
 # Roadmap
 
-## v0.1 — Foundation
+## v0.1 — Foundation ✓
 
 Initial release establishing the philosophy and behavioral framework of TraceForge.
 
-## v0.2 — Architectural Judgment
+## v0.2 — Architectural Judgment ✓
 
 Improve engineering reasoning through structured decision-making, project understanding, documentation philosophy, and architectural guidance.
 
-## v0.3 — Project Intelligence *(Planned)*
+## v0.3 — AI-Assisted Development Methodology ✓
 
 Expand TraceForge's ability to understand project context, recognize architectural patterns, detect potential architectural drift, and provide increasingly context-aware recommendations.
+
+## v0.4 — Operational Framework *(Planned)*
+
+Focus:
+• Repository conventions
+• Templates
+• Release lifecycle
+• Practical workflows
+• Adoption guides
+
 
 ---
 
