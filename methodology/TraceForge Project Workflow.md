@@ -1,8 +1,6 @@
 # TraceForge Project Workflow
 
-<<<<<<< HEAD
 **Answers the question:**
->>>>>>> 607b64fb5469e82dd037c50da26c59749b755896
 
 > **How does a TraceForge project progress from conception to long-term maintenance?**
 
