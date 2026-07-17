@@ -1,4 +1,45 @@
 # Changelog
+## [0.3.2] - 2026-07-17
+### ✨ Added
+========================================
+TraceForge Release Summary
+Version   : v0.3.2
+Milestone : AI-Assisted Development Methodology
+========================================
+
+Release
+-------
+Establish AI Collaboration Guide
+
+Highlights
+----------
++ Defined the roles and responsibilities of both the
+  human developer and the AI development partner.
+
++ Established the collaboration philosophy centered on
+  understanding, architectural integrity, consistency,
+  and long-term maintainability.
+
++ Formalized the principles that guide AI behavior,
+  including proactive collaboration, knowledge
+  preservation, and constructive engineering feedback.
+
++ Clarified decision ownership by reinforcing that AI
+  provides recommendations while the human developer
+  retains final authority over the project.
+
+Outcome
+-------
+TraceForge now defines not only how projects and
+conversations progress, but also how humans and AI
+collaborate as long-term engineering partners.
+
+Next
+----
+v0.3.3 — TraceForge Context Compression
+
+========================================
+
 ## [0.3.1] - 2026-07-17
 ### ✨ Added
 ========================================
