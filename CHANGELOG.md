@@ -1,4 +1,65 @@
 # Changelog
+## [0.4.1] - 2026-08-04
+### ✨ Added
+═══════════════════════════════════════════════
+          TRACEFORGE VERSION MANAGER
+═══════════════════════════════════════════════
+
+Version
+-------
+v0.4.0
+
+Codename
+--------
+Architectural Intelligence
+
+Commit
+------
+refactor(methodology): finalize v0.4 architectural refinement
+
+Summary
+-------
+Completed the final refinement pass for the v0.4 milestone by improving
+terminology consistency, strengthening behavioral contracts, refining the
+engineering recommendation workflow, reinforcing document ownership, and
+integrating Engineering Humility into the Development Doctrine.
+
+Highlights
+----------
+✓ Standardized canonical Architectural Intelligence terminology
+✓ Strengthened MUST/SHALL behavioral methodology
+✓ Reordered Recommendation Contract for architecture-first reasoning
+✓ Reinforced repository-wide document ownership validation
+✓ Added Engineering Humility as a core engineering doctrine
+✓ Improved cross-document cohesion and consistency
+✓ Removed unowned methodology artifacts
+✓ Completed repository-wide validation checks
+
+Repository Health
+-----------------
+Architecture ............. Excellent
+Methodology .............. Excellent
+Documentation ............ Excellent
+Consistency .............. Excellent
+Maintainability .......... Excellent
+
+Status
+------
+✓ v0.4 Complete
+✓ Stable Release Candidate
+✓ Ready for Merge
+
+Next Milestone
+--------------
+v0.5 — Architectural Memory
+
+Focus
+-----
+Transform engineering decisions into long-lived project intelligence through
+Architecture Decision Records, technical debt history, accepted trade-offs,
+deferred work tracking, and repository-backed architectural memory.
+
+═══════════════════════════════════════════════
 
 **Answers the question:**
 
