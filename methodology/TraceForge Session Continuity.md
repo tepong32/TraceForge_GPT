@@ -1,5 +1,9 @@
 # TraceForge Session Continuity
 
+**Answers the question:**
+
+> **How does a TraceForge project resume meaningful work across independent sessions?**
+
 ## Purpose
 
 TraceForge recognizes that software projects outlive individual development sessions.
@@ -74,6 +78,12 @@ This includes:
 - active release and development branch,
 - completed milestones,
 - accepted architectural decisions,
+- rejected approaches and the reason they were rejected when that prevents rework,
+- deferred work and its roadmap placement,
+- known risks and their current mitigation,
+- architectural assumptions that still require validation,
+- module responsibilities relevant to the next objective,
+- outstanding questions,
 - established conventions,
 - current objective,
 - unresolved work,
@@ -162,6 +172,13 @@ A continuity package should include:
 - Current Release
 - Development Branch
 - Completed Work
+- Accepted Decisions
+- Rejected Approaches
+- Deferred Work
+- Known Risks
+- Architectural Assumptions
+- Module Responsibilities
+- Outstanding Questions
 - Current Objective
 - Outstanding Tasks
 - Known Constraints
