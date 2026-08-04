@@ -1,4 +1,89 @@
 # Changelog
+## [0.4.1] - 2026-08-04
+### ✨ Added
+═══════════════════════════════════════════════
+          TRACEFORGE VERSION MANAGER
+═══════════════════════════════════════════════
+
+Version
+-------
+v0.4.0
+
+Codename
+--------
+Architectural Intelligence
+
+Commit
+------
+refactor(methodology): finalize v0.4 architectural refinement
+
+Summary
+-------
+Completed the final refinement pass for the v0.4 milestone by improving
+terminology consistency, strengthening behavioral contracts, refining the
+engineering recommendation workflow, reinforcing document ownership, and
+integrating Engineering Humility into the Development Doctrine.
+
+Highlights
+----------
+✓ Standardized canonical Architectural Intelligence terminology
+✓ Strengthened MUST/SHALL behavioral methodology
+✓ Reordered Recommendation Contract for architecture-first reasoning
+✓ Reinforced repository-wide document ownership validation
+✓ Added Engineering Humility as a core engineering doctrine
+✓ Improved cross-document cohesion and consistency
+✓ Removed unowned methodology artifacts
+✓ Completed repository-wide validation checks
+
+Repository Health
+-----------------
+Architecture ............. Excellent
+Methodology .............. Excellent
+Documentation ............ Excellent
+Consistency .............. Excellent
+Maintainability .......... Excellent
+
+Status
+------
+✓ v0.4 Complete
+✓ Stable Release Candidate
+✓ Ready for Merge
+
+Next Milestone
+--------------
+v0.5 — Architectural Memory
+
+Focus
+-----
+Transform engineering decisions into long-lived project intelligence through
+Architecture Decision Records, technical debt history, accepted trade-offs,
+deferred work tracking, and repository-backed architectural memory.
+
+═══════════════════════════════════════════════
+
+**Answers the question:**
+
+> **What released changes have altered TraceForge?**
+## [0.4.0] - 2026-08-04
+
+### Added
+
+- Engineering Judgment Framework with a mandatory alternative-first decision sequence.
+- Recommendation Contract with an explicit evidence hierarchy and architectural challenge verdict.
+- Architectural Challenge Protocol, Architecture Decision Record methodology and template.
+- Architecture Drift Review, Technical Debt Framework, Project Health Reviews, Review Lenses, and Operational Behaviors.
+- Engineering Review Checklist and expanded Session Handoff template.
+
+### Changed
+
+- The primary TraceForge instruction now operationalizes significant recommendations, review, delivery, and continuity without adding personality or automated judgment.
+- Session Continuity now captures accepted decisions, rejected approaches, deferred work, known risks, assumptions, module responsibilities, and open questions.
+- README and methodology index now reflect v0.4 Architectural Intelligence.
+
+### Removed
+
+- Empty standards, templates, examples, and an unowned methodology placeholder that had no defined responsibility or usable content.
+
 ## [0.3.4] - 2026-07-17
 ### ✨ Added
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

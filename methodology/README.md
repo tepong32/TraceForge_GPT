@@ -1,88 +1,62 @@
-TraceForge Methodology
+# TraceForge Methodology
 
-The TraceForge Methodology defines the principles, workflows, and practices
-that guide AI-assisted software development.
+**Answers the question:**
 
-Rather than prescribing a specific technology stack or development process,
-it establishes a framework for collaborating with AI while preserving
-architectural integrity, project continuity, and long-term maintainability.
+> **How is the TraceForge methodology organized?**
 
----
+TraceForge is organized by responsibility. Each document owns one engineering question; links connect related practices without duplicating them.
 
-## Methodology Structure
+## Foundation
 
-### Foundation
+- Manifesto - Why TraceForge exists.
+- Development Doctrine - What engineering beliefs guide TraceForge.
+- Project Identity - What defines a TraceForge project.
 
-- Manifesto
-- Development Doctrine
-- Project Identity
+## Workflow
 
-Defines the philosophy and engineering values upon which TraceForge is built.
+- Project Workflow - How a project progresses from conception to long-term maintenance.
+- Conversation Workflow - How a development conversation progresses.
+- AI Collaboration Guide - How humans and AI collaborate.
 
----
+## Continuity
 
-### Workflow
+- Context Compression - How project knowledge is preserved.
+- Session Continuity - How meaningful work resumes across sessions.
 
-- Project Workflow
-- Conversation Workflow
+## Architectural Intelligence
 
-Describes how projects progress from conception to release and how development
-sessions remain structured and intentional.
-
----
-
-### Collaboration
-
-- AI Collaboration Guide
-
-Defines the roles and responsibilities of both the developer and the AI,
-establishing TraceForge as an engineering partnership rather than a code
-generation tool.
-
----
-
-### Continuity
-
-- Context Compression
-- Session Continuity
-
-Provides mechanisms for preserving architectural knowledge, project context,
-and development momentum across independent AI conversations.
-
----
+- Engineering Judgment Framework - How TraceForge develops engineering decisions.
+- Operational Behaviors - How TraceForge consistently behaves around significant work.
+- Recommendation Contract - What structure significant recommendations follow.
+- Architectural Challenge Protocol - How significant recommendations challenge themselves.
+- Review Lenses - From which perspectives TraceForge evaluates a solution.
+- Architecture Decision Records - How consequential decisions are preserved and revisited.
+- Architecture Drift Review - How unintended architectural change is evaluated.
+- Technical Debt Framework - How technical debt is recorded and governed.
+- Project Health Reviews - How health is communicated without scores.
+- Engineering Review Checklist - How a change is verified before completion.
 
 ## Reading Order
-
-For first-time readers:
 
 1. Manifesto
 2. Development Doctrine
 3. Project Identity
-4. Project Workflow
-5. Conversation Workflow
-6. AI Collaboration Guide
-7. Context Compression
-8. Session Continuity
+4. Engineering Judgment Framework
+5. Operational Behaviors
+6. Recommendation Contract
+7. Architectural Challenge Protocol
+8. Review Lenses
+9. Architecture Decision Records
+10. Architecture Drift Review
+11. Technical Debt Framework
+12. Project Health Reviews
+13. Engineering Review Checklist
+14. Project Workflow
+15. Conversation Workflow
+16. AI Collaboration Guide
+17. Context Compression
+18. Session Continuity
 
----
+## Release Baseline
 
-## Purpose
-
-Together, these documents form the core of the TraceForge AI-Assisted
-Development Methodology.
-
-Future methodology releases will expand this framework while preserving the
-principles established here.
-
----
-
-Current Stable Baseline
-
-v0.3 Core
-
-The documents contained within this directory constitute the first stable
-release of the TraceForge AI-Assisted Development Methodology.
-
-Subsequent versions will expand the methodology through additional practices,
-templates, and operational guidance while maintaining backward compatibility
-with these foundational principles.
+The current stable baseline is **v0.4 Architectural Intelligence**. It adds explicit operational contracts while preserving the foundational philosophy.
