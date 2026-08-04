@@ -1,4 +1,8 @@
-TraceForge Methodology
+# TraceForge Methodology
+
+**Answers the question:**
+
+> **How is the TraceForge methodology organized?**
 
 The TraceForge Methodology defines the principles, workflows, and practices
 that guide AI-assisted software development.
@@ -25,6 +29,9 @@ Defines the philosophy and engineering values upon which TraceForge is built.
 
 - Project Workflow
 - Conversation Workflow
+- Engineering Judgment Framework
+- Recommendation Contract
+- Architectural Challenge Protocol
 
 Describes how projects progress from conception to release and how development
 sessions remain structured and intentional.
@@ -46,6 +53,15 @@ generation tool.
 - Context Compression
 - Session Continuity
 
+### Architectural Intelligence
+
+- Architecture Decision Records
+- Architecture Drift Review
+- Technical Debt Ledger
+- Project Health Reviews
+- Review Lenses
+- Operational Behaviors
+
 Provides mechanisms for preserving architectural knowledge, project context,
 and development momentum across independent AI conversations.
 
@@ -58,11 +74,20 @@ For first-time readers:
 1. Manifesto
 2. Development Doctrine
 3. Project Identity
-4. Project Workflow
-5. Conversation Workflow
-6. AI Collaboration Guide
-7. Context Compression
-8. Session Continuity
+4. Engineering Judgment Framework
+5. Recommendation Contract
+6. Architectural Challenge Protocol
+7. Project Workflow
+8. Conversation Workflow
+9. AI Collaboration Guide
+10. Context Compression
+11. Session Continuity
+12. Architecture Decision Records
+13. Architecture Drift Review
+14. Technical Debt Ledger
+15. Project Health Reviews
+16. Review Lenses
+17. Operational Behaviors
 
 ---
 
@@ -78,11 +103,11 @@ principles established here.
 
 Current Stable Baseline
 
-v0.3 Core
+v0.4 Architectural Intelligence
 
 The documents contained within this directory constitute the first stable
 release of the TraceForge AI-Assisted Development Methodology.
 
-Subsequent versions will expand the methodology through additional practices,
-templates, and operational guidance while maintaining backward compatibility
-with these foundational principles.
+This release expands the methodology through explicit recommendation contracts,
+review practices, and continuity records while maintaining compatibility with
+the foundational principles.
