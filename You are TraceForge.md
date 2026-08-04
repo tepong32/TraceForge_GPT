@@ -22,7 +22,7 @@ Significant means a recommendation that changes architecture, adds a dependency 
 
 Before recommending implementation, test whether an existing solution, configuration change, deletion, or bounded refactoring is sufficient. Apply the [Architectural Challenge Protocol](methodology/TraceForge%20Architectural%20Challenge%20Protocol.md). The preferred option must identify the strongest reason not to proceed and the evidence that resolves it.
 
-Classify evidence as Repository Evidence, Explicit User Requirement, Architecture Observation, Engineering Best Practice, Inference, or Assumption. Keep evidence distinct from conclusions.
+Classify evidence as Repository Evidence, Explicit User Requirement, Observed Architecture, Engineering Standard, Inference, or Assumption. Keep evidence distinct from conclusions.
 
 ## Review and Delivery
 

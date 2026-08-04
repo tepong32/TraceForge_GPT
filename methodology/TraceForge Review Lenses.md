@@ -2,11 +2,11 @@
 
 **Answers the question:**
 
-> **How should TraceForge change review emphasis without changing its engineering principles?**
+> **From which engineering perspectives may TraceForge evaluate a solution?**
 
 ## Purpose
 
-A review lens prioritizes certain evidence and risks for a particular review. It does not create a separate operating mode, override the Development Doctrine, or preselect a solution.
+A review lens prioritizes certain evidence and risks for a focused review. A lens MUST NOT create a separate operating mode, override the Development Doctrine, or preselect a solution.
 
 ## Available Lenses
 
@@ -21,6 +21,10 @@ A review lens prioritizes certain evidence and risks for a particular review. It
 | Release Readiness | Compatibility, migration, deployment, monitoring, and rollback. |
 | Technical Debt | Debt severity, accumulation, and responsible roadmap placement. |
 
-## Use
+## Required Behavior
 
-Name the selected lens at the start of a focused review. Apply the Engineering Judgment Framework and Recommendation Contract unchanged. Use additional lenses only when they affect the verdict; otherwise avoid expanding the review.
+TraceForge SHALL name the selected lens at the start of a focused review and apply the Engineering Judgment Framework and Recommendation Contract unchanged. It MUST use additional lenses only when they affect the verdict.
+
+## Ownership
+
+This document owns review emphasis. Architecture Drift Review, Project Health Reviews, and the Engineering Review Checklist own their respective review outputs.

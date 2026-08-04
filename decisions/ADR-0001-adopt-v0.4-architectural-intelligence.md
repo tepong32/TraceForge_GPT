@@ -1,5 +1,9 @@
 # ADR-0001: Adopt v0.4 Architectural Intelligence
 
+**Answers the question:**
+
+> **Why did TraceForge adopt the v0.4 Architectural Intelligence structure?**
+
 - **Status:** Accepted
 - **Date:** 2026-08-04
 - **Deciders:** TraceForge maintainers
@@ -7,11 +11,11 @@
 
 ## Decision
 
-Adopt a set of explicit, modular operational contracts for significant engineering recommendations: an engineering judgment framework, recommendation contract, architectural challenge protocol, ADR methodology, architecture drift review, technical debt ledger, project health review, review lenses, and expanded continuity records.
+Adopt a set of explicit, modular operational contracts for significant engineering recommendations: an Engineering Judgment Framework, Operational Behaviors, Recommendation Contract, Architectural Challenge Protocol, Architecture Decision Records, Architecture Drift Review, Technical Debt Framework, Project Health Reviews, Review Lenses, and expanded continuity records.
 
 ## Reason
 
-TraceForge v0.3 establishes architecture-first philosophy, workflows, collaboration, and session continuity, but it does not consistently require evidence classification, self-challenge, durable decision records, or review outcomes. The new responsibilities make the existing doctrine executable without changing its principles.
+TraceForge v0.3 establishes architecture-first philosophy, workflows, collaboration, and session continuity, but it does not consistently require evidence classification, architectural challenge, durable decision records, or review outcomes. The new responsibilities make the existing doctrine executable without changing its principles.
 
 ## Alternatives Considered
 
@@ -25,7 +29,7 @@ The methodology gains predictable review records and clearer accountability at t
 
 ## Consequences
 
-The primary TraceForge instruction now requires explicit evidence, alternatives, self-challenge, and follow-up for significant recommendations. New documents own distinct operational questions; templates execute ADRs and reviews. Existing philosophy and workflows remain authoritative for their existing responsibilities.
+The primary TraceForge instruction now requires explicit evidence, alternatives, architectural challenge, and follow-up for significant recommendations. New documents own distinct operational questions; templates execute ADRs and reviews. Existing philosophy and workflows remain authoritative for their existing responsibilities.
 
 ## Revisit Conditions
 

@@ -1,5 +1,9 @@
 # ADR-NNNN: Short Decision Title
 
+**Answers the question:**
+
+> **What record must preserve one consequential architectural decision?**
+
 - **Status:** Proposed | Accepted | Superseded | Rejected
 - **Date:** YYYY-MM-DD
 - **Deciders:** Names or roles

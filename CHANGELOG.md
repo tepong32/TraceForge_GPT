@@ -1,12 +1,16 @@
 # Changelog
+
+**Answers the question:**
+
+> **What released changes have altered TraceForge?**
 ## [0.4.0] - 2026-08-04
 
 ### Added
 
 - Engineering Judgment Framework with a mandatory alternative-first decision sequence.
-- Recommendation Contract with an explicit evidence hierarchy and self-challenge verdict.
+- Recommendation Contract with an explicit evidence hierarchy and architectural challenge verdict.
 - Architectural Challenge Protocol, Architecture Decision Record methodology and template.
-- Architecture Drift Review, Technical Debt Ledger, Project Health Review, Review Lenses, and Operational Behaviors.
+- Architecture Drift Review, Technical Debt Framework, Project Health Reviews, Review Lenses, and Operational Behaviors.
 - Engineering Review Checklist and expanded Session Handoff template.
 
 ### Changed

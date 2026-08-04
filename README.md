@@ -10,24 +10,14 @@ It treats the repository as permanent project memory and conversations as tempor
 
 ## Core Methodology
 
-- [Manifesto](manifesto/TraceForge%20Manifesto.md) — Why TraceForge exists.
-- [Development Doctrine](methodology/TraceForge%20Development%20Doctrine.md) — The engineering beliefs that guide it.
-- [Project Identity](methodology/TraceForge%20Project%20Identity.md) — What defines a TraceForge project.
-- [Engineering Judgment Framework](methodology/TraceForge%20Decision%20Framework.md) — How significant recommendations are developed.
-- [Recommendation Contract](methodology/TraceForge%20Recommendation%20Contract.md) — What significant recommendations must demonstrate.
-- [Architectural Challenge Protocol](methodology/TraceForge%20Architectural%20Challenge%20Protocol.md) — How a recommendation tests itself.
-- [Project and Conversation Workflows](methodology/README.md) — How work progresses and continuity is preserved.
+- [Manifesto](manifesto/TraceForge%20Manifesto.md) - Why TraceForge exists.
+- [Development Doctrine](methodology/TraceForge%20Development%20Doctrine.md) - The engineering beliefs that guide it.
+- [Project Identity](methodology/TraceForge%20Project%20Identity.md) - What defines a TraceForge project.
+- [Methodology Index](methodology/README.md) - The canonical ownership map and reading order.
 
 ## Architectural Intelligence
 
-TraceForge v0.4 adds explicit operational contracts without replacing the existing methodology:
-
-- Architecture Decision Records preserve consequential decisions and revisit conditions.
-- Architecture Drift Reviews identify unintended boundary, ownership, dependency, and coupling changes.
-- The Technical Debt Ledger makes accepted or discovered debt visible and planable.
-- Project Health Reviews use evidence-backed health states rather than arbitrary scores.
-- Review Lenses focus a review while preserving the same engineering principles.
-- The Engineering Review Checklist verifies a change proportionately before completion.
+TraceForge v0.4 makes its existing philosophy operational through the Engineering Judgment Framework, Operational Behaviors, Recommendation Contract, Architectural Challenge Protocol, Review Lenses, Architecture Decision Records, Architecture Drift Review, Technical Debt Framework, Project Health Reviews, and Engineering Review Checklist.
 
 ## Repository Guide
 
@@ -37,15 +27,11 @@ TraceForge v0.4 adds explicit operational contracts without replacing the existi
 | `methodology/` | Workflows, decision practices, continuity, and review methodology. |
 | `templates/` | Reusable records that apply the methodology. |
 | `decisions/` | Consequential accepted, rejected, or superseded architectural decisions. |
-| `standards/` | Project-level standards when a project adopts TraceForge. |
-| `examples/` | Worked examples when an example is necessary to clarify application. |
 
 ## Adoption
 
-For a significant change, begin with the Engineering Judgment Framework, record the result using the Recommendation Contract, and preserve a consequential accepted decision in an ADR. Use the Engineering Review Checklist before delivery and the Session Handoff Template when work spans sessions.
+For a significant change, follow the Engineering Judgment Framework and record the result using the Recommendation Contract. Preserve consequential accepted decisions in an ADR, verify delivery with the Engineering Review Checklist, and use the Session Handoff Template when work spans sessions.
 
 ## Version
 
-Current release: **v0.4.0 — Architectural Intelligence**.
-
-TraceForge evolves incrementally. New practices must have a distinct responsibility, preserve canonical ownership, and measurably improve engineering decisions.
+Current release: **v0.4.0 - Architectural Intelligence**.

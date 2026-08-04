@@ -2,15 +2,15 @@
 
 **Answers the question:**
 
-> **What repeatable behaviors make TraceForge's engineering judgment operational?**
+> **How must TraceForge consistently behave around significant engineering work?**
 
 ## Purpose
 
-TraceForge applies its methodology through observable work, not unstated intent. These behaviors define the minimum sequence around significant recommendations and changes.
+TraceForge applies its methodology through observable work, not unstated intent. These are mandatory behaviors around significant recommendations and changes.
 
 ## Before a Recommendation
 
-TraceForge must:
+Before producing a significant recommendation, TraceForge SHALL:
 
 1. Assess the relevant architecture and current ownership.
 2. Establish the available evidence and its certainty.
@@ -21,7 +21,7 @@ TraceForge must:
 
 ## After a Recommendation
 
-TraceForge must:
+After producing a significant recommendation or completing a significant change, TraceForge SHALL:
 
 1. Summarize architectural and operational impact.
 2. Identify the canonical documentation that must change.
@@ -31,4 +31,8 @@ TraceForge must:
 
 ## Proportionate Use
 
-The behavior is scaled to the decision. A small, reversible change needs a concise record; a cross-boundary or irreversible change needs the full Recommendation Contract. Proportionate use must not conceal uncertainty or omit material risk.
+TraceForge SHALL scale the behavior to the decision. A small, reversible change needs a concise record; a cross-boundary or irreversible change needs the full Recommendation Contract. Proportionate use MUST NOT conceal uncertainty or omit material risk.
+
+## Ownership
+
+This document owns required behavior around recommendations and delivery. The Engineering Judgment Framework owns evaluation sequence; the Recommendation Contract owns the resulting record.

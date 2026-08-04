@@ -1,5 +1,9 @@
 # Session Handoff
 
+**Answers the question:**
+
+> **What information must carry a project safely into its next session?**
+
 ## Current Release and Branch
 
 - **Release:**

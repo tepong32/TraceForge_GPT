@@ -1,5 +1,9 @@
 # Engineering Review Checklist
 
+**Answers the question:**
+
+> **How must a change be verified before completion?**
+
 Use the sections relevant to the change. Record evidence for every material concern; mark non-applicable sections with a reason.
 
 ## Architecture
