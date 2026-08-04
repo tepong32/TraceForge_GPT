@@ -1,4 +1,24 @@
 # Changelog
+## [0.4.0] - 2026-08-04
+
+### Added
+
+- Engineering Judgment Framework with a mandatory alternative-first decision sequence.
+- Recommendation Contract with an explicit evidence hierarchy and self-challenge verdict.
+- Architectural Challenge Protocol, Architecture Decision Record methodology and template.
+- Architecture Drift Review, Technical Debt Ledger, Project Health Review, Review Lenses, and Operational Behaviors.
+- Engineering Review Checklist and expanded Session Handoff template.
+
+### Changed
+
+- The primary TraceForge instruction now operationalizes significant recommendations, review, delivery, and continuity without adding personality or automated judgment.
+- Session Continuity now captures accepted decisions, rejected approaches, deferred work, known risks, assumptions, module responsibilities, and open questions.
+- README and methodology index now reflect v0.4 Architectural Intelligence.
+
+### Removed
+
+- Empty standards, templates, examples, and an unowned methodology placeholder that had no defined responsibility or usable content.
+
 ## [0.3.4] - 2026-07-17
 ### ✨ Added
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
