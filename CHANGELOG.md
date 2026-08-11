@@ -1,69 +1,37 @@
 # Changelog
-## [0.4.1] - 2026-08-04
-### ✨ Added
-═══════════════════════════════════════════════
-          TRACEFORGE VERSION MANAGER
-═══════════════════════════════════════════════
-
-Version
--------
-v0.4.0
-
-Codename
---------
-Architectural Intelligence
-
-Commit
-------
-refactor(methodology): finalize v0.4 architectural refinement
-
-Summary
--------
-Completed the final refinement pass for the v0.4 milestone by improving
-terminology consistency, strengthening behavioral contracts, refining the
-engineering recommendation workflow, reinforcing document ownership, and
-integrating Engineering Humility into the Development Doctrine.
-
-Highlights
-----------
-✓ Standardized canonical Architectural Intelligence terminology
-✓ Strengthened MUST/SHALL behavioral methodology
-✓ Reordered Recommendation Contract for architecture-first reasoning
-✓ Reinforced repository-wide document ownership validation
-✓ Added Engineering Humility as a core engineering doctrine
-✓ Improved cross-document cohesion and consistency
-✓ Removed unowned methodology artifacts
-✓ Completed repository-wide validation checks
-
-Repository Health
------------------
-Architecture ............. Excellent
-Methodology .............. Excellent
-Documentation ............ Excellent
-Consistency .............. Excellent
-Maintainability .......... Excellent
-
-Status
-------
-✓ v0.4 Complete
-✓ Stable Release Candidate
-✓ Ready for Merge
-
-Next Milestone
---------------
-v0.5 — Architectural Memory
-
-Focus
------
-Transform engineering decisions into long-lived project intelligence through
-Architecture Decision Records, technical debt history, accepted trade-offs,
-deferred work tracking, and repository-backed architectural memory.
-
-═══════════════════════════════════════════════
 
 **Answers the question:**
 
 > **What released changes have altered TraceForge?**
+
+## [0.5.0] - 2026-08-12
+
+### Added
+
+- Collaborative Execution workflow for inquiry, review, diagnosis, planning, implementation, and monitoring requests.
+- Canonical `SESSION_HANDOFF.md` lifecycle, portable handoff format, stale-state reconciliation, and deterministic resume protocol.
+- Standard-library tests for release behavior and repository consistency.
+- ADR-0002 documenting the v0.5 execution and continuity model.
+
+### Changed
+
+- Runtime and operational contracts now define authority boundaries, repository-first clarification, progress communication, and evidence-backed completion.
+- Context Compression now separates temporary conversation knowledge, current handoff state, and durable project knowledge.
+- The release helper is standard-library-only, preserves the original version during secondary updates, and requires explicit flags for Git side effects.
+- README, methodology index, review checklist, handoff template, and release metadata now reflect v0.5.
+
+### Fixed
+
+- Removed stale references to methodology documents that do not exist.
+- Replaced the malformed v0.4.1 changelog entry and corrected release-version drift.
+
+## [0.4.1] - 2026-08-04
+
+### Changed
+
+- Refined v0.4 terminology, behavioral contracts, recommendation ordering, document ownership, and Engineering Humility guidance.
+- Completed the Architectural Intelligence consistency and validation pass.
+
 ## [0.4.0] - 2026-08-04
 
 ### Added

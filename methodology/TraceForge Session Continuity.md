@@ -2,222 +2,114 @@
 
 **Answers the question:**
 
-> **How does a TraceForge project resume meaningful work across independent sessions?**
+> **How does a TraceForge project preserve and resume meaningful work across independent sessions?**
 
 ## Purpose
 
-TraceForge recognizes that software projects outlive individual development sessions.
+Projects outlive conversations, context windows, contributors, and AI models. Session Continuity preserves the current working state needed to resume safely without treating a transcript as project memory.
 
-Conversations are temporary. Context windows are finite. AI models may change over time. Human developers may return after hours, days, or months away from a project.
+The repository is authoritative. A handoff is a replaceable snapshot of current work, not a permanent account of the project and not authority to perform actions the user has not authorized.
 
-Despite these interruptions, the project itself should continue as though development never stopped.
+## Continuity Artifacts
 
-Session Continuity defines the methodology for preserving development momentum across independent conversations by reconnecting each new session to the project's permanent knowledge rather than its temporary conversational history.
+Each TraceForge project SHOULD maintain one canonical current-state artifact. The default location is `SESSION_HANDOFF.md` at the project root; a project MAY document another location.
 
-Its objective is not to recreate previous discussions, but to restore sufficient understanding for meaningful development to continue naturally.
+When work moves to another conversation or AI, TraceForge SHOULD also produce a portable handoff block derived from the canonical artifact. Both forms use the same information model, but the portable block includes enough context to be useful without repository access.
 
----
+The canonical handoff is replaced as state changes. It is not an append-only diary. Durable outcomes move to their permanent owners before old working state is removed.
 
-# Core Principle
+## Required Handoff Record
 
-A development session is temporary.
+### Snapshot
 
-The project is permanent.
+Record the last-updated timestamp, current release and milestone, branch and source commit when Git is available, and relevant working-tree state. Identify uncommitted or user-owned changes that the next session must preserve.
 
-Development should resume from the project's accumulated knowledge rather than depend upon complete conversational history.
+### Current Objective
 
-TraceForge therefore preserves progress instead of conversations.
+Record the intended outcome, scope boundary, and one status: `Ready`, `In Progress`, `Blocked`, or `Awaiting Decision`.
 
----
+### Completed Work
 
-# Development Sessions
+Record material work completed since the previous handoff, affected areas, and the validation supporting completion. Do not list an outcome as complete when required checks have failed or remain unknown.
 
-Within TraceForge, a development session is a bounded period of focused engineering work.
+### Work in Progress
 
-A session exists to accomplish a specific objective while contributing to the long-term evolution of the project.
+Record exact partial state, what remains, and any unsafe point from which work must not blindly continue.
 
-Every session should have:
+### Decisions
 
-- A clearly defined objective.
-- A practical scope.
-- Meaningful progress.
-- A logical stopping point.
+Link accepted decisions to ADRs or canonical documentation. Retain a rejected approach only when its reason prevents repeated work. State assumptions that still require validation.
 
-Sessions represent working periods, not project milestones.
+### Risks and Blockers
 
-Multiple sessions may contribute toward a single feature, while a single session may complete multiple small objectives.
+Record known failures, constraints, compatibility concerns, mitigations, and any user decision or authority required.
 
----
+### Validation
 
-# Session Boundaries
+Record checks run and their outcome as passed, failed, or skipped. Summarize relevant failures without embedding large logs.
 
-Development sessions should end intentionally rather than arbitrarily.
+### Next Starting Point
 
-Natural stopping points include:
+Record the next independently useful objective, the first concrete inspection or implementation step, and its completion criteria.
 
-- completion of the current objective,
-- completion of an architectural decision,
-- completion of a meaningful implementation phase,
-- sufficient progress for the current work period,
-- approaching context limitations,
-- or any point where development can safely pause without introducing unnecessary ambiguity.
+### Open Questions
 
-Ending at a logical checkpoint improves the quality of future continuity.
+Record only unresolved questions that can materially change the next action.
 
----
+## Update Cadence
 
-# Preserving Continuity
+TraceForge SHALL refresh continuity state:
 
-When a session concludes, TraceForge preserves the state of the project rather than the state of the conversation.
+- after material implementation or an accepted engineering decision;
+- when work pauses in an incomplete state;
+- before likely context exhaustion;
+- at a milestone or release boundary;
+- when the user intends to continue in another conversation or with another AI.
 
-Continuity should capture the information necessary to resume productive development without requiring previous discussions to be revisited.
+Routine explanations and exchanges that do not change project state do not require an update.
 
-This includes:
+Updating a repository handoff requires the same repository-write authority as the surrounding task. When mutation is not authorized, TraceForge SHALL leave the file unchanged and MAY provide a portable handoff in its response.
 
-- current project identity,
-- active release and development branch,
-- completed milestones,
-- accepted architectural decisions,
-- rejected approaches and the reason they were rejected when that prevents rework,
-- deferred work and its roadmap placement,
-- known risks and their current mitigation,
-- architectural assumptions that still require validation,
-- module responsibilities relevant to the next objective,
-- outstanding questions,
-- established conventions,
-- current objective,
-- unresolved work,
-- known constraints,
-- and the next logical development step.
+## Durable Knowledge Boundary
 
-These represent project knowledge rather than conversational history.
+Before replacing resolved handoff content, move lasting knowledge to its canonical owner:
 
----
+| Knowledge | Owner |
+| --- | --- |
+| Current objective, partial work, blockers, and next action | Canonical handoff |
+| Current architecture and established conventions | Project documentation |
+| Accepted consequential architectural decisions | ADRs |
+| Material accepted or discovered debt | Debt record |
+| Released outcomes | Changelog |
 
-# What Carries Forward
+The handoff links to these records instead of duplicating their rationale. At a milestone boundary, distill durable knowledge first, then reset the handoff to the next objective.
 
-The following should persist across every development session:
+## Portable Handoff
 
-- Project identity.
-- Architecture.
-- Repository structure.
-- Development methodology.
-- Coding standards.
-- Version history.
-- Accepted design decisions.
-- Completed implementations.
-- Known limitations.
-- Current roadmap.
-- Current development objective.
-- Outstanding engineering work.
+A portable handoff SHALL begin with this direction:
 
-These collectively represent the project's permanent memory.
+> Resume from this snapshot. Inspect any available repository state before acting, treat the repository as authoritative, and reconcile differences rather than assuming this handoff is current.
 
----
+It SHALL include the required handoff record in compact form and make failing tests, incomplete edits, dirty working-tree state, blockers, and decisions awaiting the user explicit. It MUST NOT contain hidden reasoning, complete transcripts, large diffs, raw logs, or duplicated permanent documentation.
 
-# What Does Not Carry Forward
+## Resume Protocol
 
-Not every part of a conversation deserves permanence.
+At the start of a resumed session, TraceForge SHALL:
 
-The following should generally remain within the completed session:
+1. Read project identity, the canonical handoff, relevant accepted decisions, and current repository state.
+2. Compare the recorded release, milestone, branch, source commit, working tree, and objective with current evidence.
+3. Treat the repository as authoritative when evidence conflicts.
+4. Mark the snapshot `Needs Reconciliation` when its branch, revision, or material state no longer matches.
+5. Reconstruct the current objective and constraints from canonical evidence.
+6. Briefly state the restored objective, material discrepancies, and next action.
+7. Resume without asking the user to repeat settled context.
 
-- exploratory reasoning,
-- abandoned approaches,
-- speculative discussions,
-- repeated explanations,
-- temporary brainstorming,
-- conversational digressions,
-- intermediate AI reasoning,
-- redundant implementation attempts,
-- and information that did not influence the project's final direction.
+TraceForge SHALL ask before continuing only when reconciliation exposes an unsafe partial change, a material product choice, or missing authority.
 
-Temporary work should not become permanent project knowledge unless it produces lasting engineering value.
+## Non-Git Projects
 
----
+Projects without Git omit branch, commit, and working-tree fields. They still record a timestamp, project version or milestone when available, current state, validation, and next action.
 
-# Restoring Context
+## Ownership
 
-Every new development session should begin by reconnecting to the project's permanent state.
-
-Context restoration should establish:
-
-- where the project currently stands,
-- what has already been completed,
-- what constraints exist,
-- what objective is currently active,
-- and what work logically follows.
-
-The objective is not to rediscover previous decisions, but to continue building upon them.
-
-A restored session should feel like returning to an active workbench rather than beginning a new project.
-
----
-
-# Session Resume
-
-Once context has been restored, development should continue immediately from the next meaningful engineering task.
-
-The new session should avoid repeating previous discovery, redesigning settled decisions, or re-evaluating accepted architecture unless new information justifies doing so.
-
-Progress should remain cumulative throughout the lifetime of the project.
-
----
-
-# Session Continuity Package
-
-Each completed development session should produce a concise continuity package describing the current project state.
-
-A continuity package should include:
-
-- Current Release
-- Development Branch
-- Completed Work
-- Accepted Decisions
-- Rejected Approaches
-- Deferred Work
-- Known Risks
-- Architectural Assumptions
-- Module Responsibilities
-- Outstanding Questions
-- Current Objective
-- Outstanding Tasks
-- Known Constraints
-- Recommended Starting Point
-- Suggested Next Version (when appropriate)
-
-This package serves as the bridge between independent development sessions while remaining significantly smaller than the complete conversational history.
-
----
-
-# Relationship to Context Compression
-
-Context Compression and Session Continuity serve complementary purposes.
-
-Context Compression determines what knowledge deserves permanent preservation.
-
-Session Continuity determines how future development reconnects with that preserved knowledge.
-
-Compression preserves understanding.
-
-Continuity restores momentum.
-
-Together they enable projects to evolve across countless independent conversations without relying on complete conversational history.
-
----
-
-# Guiding Principles
-
-TraceForge Session Continuity is governed by the following principles:
-
-- Projects outlive conversations.
-- Conversations are temporary workspaces.
-- The repository is the project's permanent memory.
-- Progress should accumulate across sessions.
-- Resume development rather than restart it.
-- Preserve decisions instead of discussions.
-- Restore understanding before implementation.
-- Maintain momentum without depending on conversational history.
-
-A development session should feel like leaving a workshop at the end of the day.
-
-The next session should feel like returning to the same workshop, where the tools remain in place, the plans remain on the table, and development simply continues.
+This document owns canonical handoff lifecycle, portable transfer, stale-state reconciliation, and resume behavior. Context Compression owns what becomes durable knowledge. Conversation Workflow owns when the lifecycle invokes a handoff.

@@ -1,270 +1,247 @@
-import subprocess
-import re
-import sys
-from datetime import datetime
-from pathlib import Path
-from colorama import Fore, Style, init
-import argparse
+"""Prepare TraceForge version and changelog updates with explicit Git effects."""
 
-init(autoreset=True)
+from __future__ import annotations
+
+import argparse
+import re
+import subprocess
+import sys
+from datetime import date
+from pathlib import Path
+from typing import Iterable, Sequence
+
 
 VERSION_FILE = Path("VERSION")
 CHANGELOG_FILE = Path("CHANGELOG.md")
-# 1. Configuration for files that need version replacement
-VERSIONED_FILES = [
-    Path("setup.py"),  # Common for Python packages
-    Path("src/__init__.py"), # Example for an internal file
-]
-# Define valid changelog categories and their emojis/headers
+VERSIONED_FILES = [Path("setup.py"), Path("src/__init__.py")]
 CHANGELOG_CATEGORIES = {
-    "feature": "✨ Added",
-    "fix": "🐞 Fixed",
-    "refactor": "🔨 Refactor",
-    "chore": "🧹 Chore",
-    "docs": "📝 Docs",
+    "feature": "Added",
+    "fix": "Fixed",
+    "refactor": "Changed",
+    "chore": "Changed",
+    "docs": "Changed",
 }
+VERSION_PATTERN = re.compile(r"^\d+\.\d+\.\d+$")
 
 
-# -------------------------------
-# Utilities
-# -------------------------------
+def get_current_version(version_file: Path = VERSION_FILE) -> str:
+    """Read and validate a semantic version without modifying the repository."""
+    if not version_file.exists():
+        raise FileNotFoundError(f"Version file not found: {version_file}")
 
-def get_current_version():
-    """Read current version or create default."""
-    if not VERSION_FILE.exists():
-        VERSION_FILE.write_text("0.0.0", encoding="utf-8")
-        print(Fore.YELLOW + "🪄 VERSION file not found — created default 0.0.0")
-
-    try:
-        version = VERSION_FILE.read_text(encoding="utf-8").strip()
-        parts = version.split(".")
-        if len(parts) != 3 or not all(p.isdigit() for p in parts):
-            raise ValueError
-        return version
-    except Exception:
-        print(Fore.RED + "⚠️ Invalid VERSION format — resetting to 0.0.0")
-        VERSION_FILE.write_text("0.0.0", encoding="utf-8")
-        return "0.0.0"
+    version = version_file.read_text(encoding="utf-8").strip()
+    if not VERSION_PATTERN.fullmatch(version):
+        raise ValueError(f"Invalid semantic version in {version_file}: {version!r}")
+    return version
 
 
-def bump_version(current_version, bump_type):
-    """Increment version based on bump type."""
+def bump_version(current_version: str, bump_type: str) -> str:
+    """Return the requested major, minor, or patch increment."""
+    if not VERSION_PATTERN.fullmatch(current_version):
+        raise ValueError(f"Invalid semantic version: {current_version!r}")
+    if bump_type not in {"major", "minor", "patch"}:
+        raise ValueError(f"Unsupported bump type: {bump_type}")
+
     major, minor, patch = map(int, current_version.split("."))
-
     if bump_type == "major":
-        major += 1
-        minor = 0
-        patch = 0
-    elif bump_type == "minor":
-        minor += 1
-        patch = 0
-    else:
-        patch += 1
-
-    new_version = f"{major}.{minor}.{patch}"
-    print(f"{Fore.CYAN}🔧 Bumping version {current_version} → {new_version}")
-    return new_version
+        return f"{major + 1}.0.0"
+    if bump_type == "minor":
+        return f"{major}.{minor + 1}.0"
+    return f"{major}.{minor}.{patch + 1}"
 
 
-def build_changelog_entry(new_version, message, category="feature"):
-    """Build changelog text for display or write with categorization."""
-    date_str = datetime.now().strftime("%Y-%m-%d")
-    header = CHANGELOG_CATEGORIES.get(category.lower(), "✨ Added")
+def build_changelog_entry(
+    new_version: str,
+    message: str,
+    category: str = "feature",
+    release_date: date | None = None,
+) -> str:
+    """Build a concise Keep-a-Changelog-style release entry."""
+    cleaned_message = message.strip()
+    if not cleaned_message:
+        raise ValueError("Release message cannot be empty")
+    if category not in CHANGELOG_CATEGORIES:
+        raise ValueError(f"Unsupported changelog category: {category}")
 
-    # Format message for list or blockquote if multi-line
-    if "\n" in message:
-        entry_content = message.strip()
-    else:
-        entry_content = f"- {message.strip()}"
-
-    return f"## [{new_version}] - {date_str}\n### {header}\n{entry_content}\n\n"
-
-
-def update_version_in_files(old_version, new_version, dry_run=False):
-    """Update version string in secondary files (e.g., setup.py)."""
-    updated_files = []
-    # Regex to find version strings like version='X.Y.Z' or __version__ = 'X.Y.Z'
-    pattern = re.compile(r"version\s*=\s*['\"]" + re.escape(old_version) + r"['\"]|__version__\s*=\s*['\"]" + re.escape(old_version) + r"['\"]")
-    replacement = r"\g<0>".replace(old_version, new_version) # Preserve quotes/spacing
-
-    for file_path in VERSIONED_FILES:
-        if file_path.exists():
-            try:
-                content = file_path.read_text(encoding="utf-8")
-                new_content, count = re.subn(pattern, replacement, content)
-
-                if count > 0:
-                    if not dry_run:
-                        file_path.write_text(new_content, encoding="utf-8")
-                        updated_files.append(str(file_path))
-                        print(Fore.GREEN + f"  → Updated version in {file_path}")
-                    else:
-                        print(Fore.MAGENTA + f"  → Would update version in {file_path}")
-                
-            except Exception as e:
-                print(Fore.RED + f"⚠️ Failed to process {file_path}: {e}")
-
-    return updated_files
+    heading = CHANGELOG_CATEGORIES[category]
+    entry_body = cleaned_message if "\n" in cleaned_message else f"- {cleaned_message}"
+    stamp = (release_date or date.today()).isoformat()
+    return f"## [{new_version}] - {stamp}\n\n### {heading}\n\n{entry_body}\n"
 
 
-def update_files(new_version, message, category, dry_run=False):
-    """Safely update version and changelog with UTF-8 encoding."""
-    changelog_entry = build_changelog_entry(new_version, message, category)
-    files_to_add = ["VERSION", "CHANGELOG.md"]
+def insert_changelog_entry(existing: str, entry: str) -> str:
+    """Insert an entry immediately below the changelog title."""
+    normalized = existing.strip()
+    if not normalized:
+        normalized = "# Changelog"
+    if not normalized.startswith("# Changelog"):
+        normalized = f"# Changelog\n\n{normalized}"
+
+    remainder = normalized[len("# Changelog") :].lstrip()
+    if remainder:
+        return f"# Changelog\n\n{entry.strip()}\n\n{remainder.rstrip()}\n"
+    return f"# Changelog\n\n{entry.strip()}\n"
+
+
+def update_version_in_files(
+    old_version: str,
+    new_version: str,
+    versioned_files: Iterable[Path] = VERSIONED_FILES,
+    *,
+    dry_run: bool = False,
+) -> list[Path]:
+    """Replace declared Python version assignments and return affected files."""
+    assignment = re.compile(
+        rf"(?P<prefix>(?:version|__version__)\s*=\s*['\"]){re.escape(old_version)}(?P<suffix>['\"])"
+    )
+    affected: list[Path] = []
+
+    for file_path in versioned_files:
+        if not file_path.exists():
+            continue
+        content = file_path.read_text(encoding="utf-8")
+        updated, count = assignment.subn(
+            lambda match: f"{match.group('prefix')}{new_version}{match.group('suffix')}",
+            content,
+        )
+        if count:
+            affected.append(file_path)
+            if not dry_run:
+                file_path.write_text(updated, encoding="utf-8")
+    return affected
+
+
+def update_files(
+    old_version: str,
+    new_version: str,
+    message: str,
+    category: str,
+    *,
+    version_file: Path = VERSION_FILE,
+    changelog_file: Path = CHANGELOG_FILE,
+    versioned_files: Iterable[Path] = VERSIONED_FILES,
+    dry_run: bool = False,
+) -> list[Path]:
+    """Prepare the version and changelog files without invoking Git."""
+    entry = build_changelog_entry(new_version, message, category)
+    existing_changelog = (
+        changelog_file.read_text(encoding="utf-8") if changelog_file.exists() else "# Changelog\n"
+    )
+    new_changelog = insert_changelog_entry(existing_changelog, entry)
+    secondary = update_version_in_files(
+        old_version, new_version, versioned_files, dry_run=dry_run
+    )
+    changed = [version_file, changelog_file, *secondary]
 
     if dry_run:
-        print(Style.BRIGHT + Fore.MAGENTA + "\n🚀 Dry Run Preview (no files written):\n")
-        print(Fore.CYAN + f"📦 VERSION would become:\n{new_version}\n")
-        print(Fore.CYAN + "📝 CHANGELOG entry would be:\n" + Fore.RESET + changelog_entry)
-        update_version_in_files(get_current_version(), new_version, dry_run=True) # Run secondary file update in dry-run
-        print(Fore.GREEN + "✅ Nothing written. Use without --dry-run to apply changes.\n")
+        print(f"VERSION would change: {old_version} -> {new_version}")
+        print("\nChangelog entry:\n")
+        print(entry.rstrip())
+        print("\nNo files or Git state were changed.")
+        return changed
+
+    version_file.write_text(f"{new_version}\n", encoding="utf-8")
+    changelog_file.write_text(new_changelog, encoding="utf-8")
+    return changed
+
+
+def working_tree_is_clean() -> bool:
+    result = subprocess.run(
+        ["git", "status", "--porcelain"], capture_output=True, text=True, check=True
+    )
+    return not result.stdout.strip()
+
+
+def run_git_release(
+    new_version: str,
+    message: str,
+    changed_files: Sequence[Path],
+    *,
+    commit: bool,
+    tag: bool,
+    push: bool,
+) -> None:
+    """Run only the Git effects explicitly requested by the caller."""
+    if not commit:
         return
 
-    # --- Actual file write flow ---
-    VERSION_FILE.write_text(new_version.strip(), encoding="utf-8")
-
-    # Read or create changelog (logic simplified for brevity, kept original insert method)
-    if CHANGELOG_FILE.exists():
-        content = CHANGELOG_FILE.read_text(encoding="utf-8").strip()
-    else:
-        content = "# Changelog\n\n"
-        print(Fore.YELLOW + "🪄 CHANGELOG.md not found — created fresh one")
-
-    if not content.startswith("# Changelog"):
-        content = "# Changelog\n\n" + content
-    
-    # Attempt to insert new entry right after the main heading
-    try:
-        insert_index = content.find('\n', content.find('# Changelog') + len('# Changelog'))
-        new_content = content[:insert_index] + "\n" + changelog_entry + content[insert_index:].strip()
-    except Exception:
-        new_content = content + "\n" + changelog_entry
-        print(Fore.YELLOW + "⚠️ Failed to insert at top, appending to end.")
-
-    CHANGELOG_FILE.write_text(new_content.strip() + "\n", encoding="utf-8")
-
-    # Update secondary files and track them for git add
-    updated_secondary_files = update_version_in_files(get_current_version(), new_version, dry_run=False)
-    files_to_add.extend(updated_secondary_files)
-    
-    print(Fore.GREEN + f"✅ Updated VERSION and CHANGELOG.md → v{new_version}")
-
-    return files_to_add
-
-
-# -------------------------------
-# Git Operations
-# -------------------------------
-
-def is_working_dir_clean():
-    """Check if the git working directory is clean."""
-    try:
-        result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, check=True)
-        return not result.stdout.strip()
-    except subprocess.CalledProcessError:
-        print(Fore.RED + "⚠️ Git command failed. Is this a Git repository?")
-        sys.exit(1)
-    except FileNotFoundError:
-        print(Fore.RED + "⚠️ Git not found. Is it installed and in PATH?")
-        sys.exit(1)
-
-
-def git_commit_and_tag(new_version, message, files_to_add, dry_run=False):
-    """Commit, tag, and push new version in git."""
-    if dry_run:
-        print(Fore.MAGENTA + "💡 Skipping git commit, tag, and push (dry-run mode)\n")
-        return
-    try:
-        # Commit
-        subprocess.run(["git", "add"] + files_to_add, check=True)
-        subprocess.run(["git", "commit", "-m", f"Release: {message} (v{new_version})"], check=True)
-        print(Fore.GREEN + f"✅ Git commit created for v{new_version}")
-
-        # Tag
+    subprocess.run(["git", "add", *map(str, changed_files)], check=True)
+    subprocess.run(
+        ["git", "commit", "-m", f"Release: {message} (v{new_version})"], check=True
+    )
+    if tag:
         subprocess.run(["git", "tag", f"v{new_version}"], check=True)
-        print(Fore.GREEN + f"✅ Git tag created for v{new_version}")
-
-        # Push
+    if push:
         subprocess.run(["git", "push"], check=True)
         subprocess.run(["git", "push", "--tags"], check=True)
-        print(Fore.GREEN + f"✅ Git push completed (commit and tags sent to remote)")
-
-    except subprocess.CalledProcessError as e:
-        print(Fore.RED + f"⚠️ Git operation failed: {e}")
-        print(Fore.YELLOW + "You may need to manually resolve and push.")
 
 
-# -------------------------------
-# Main CLI logic (Using argparse)
-# -------------------------------
-
-def parse_args():
-    """Parse command line arguments using argparse."""
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Automated version management, changelog update, and Git release process.",
-        formatter_class=argparse.RawTextHelpFormatter
+        description="Update TraceForge version metadata; Git effects require explicit flags."
     )
-
+    parser.add_argument("message", help="Changelog and optional release-commit message")
     parser.add_argument(
-        "message",
-        type=str,
-        help="The commit message/changelog entry. Use quotes for single-line, or triple-quotes for multi-line messages."
+        "bump", choices=["patch", "minor", "major"], nargs="?", default="patch"
     )
-
     parser.add_argument(
-        "bump",
-        choices=["patch", "minor", "major"],
-        nargs="?",
-        default="patch",
-        help="The segment of the version to increment (default: patch)."
-    )
-
-    parser.add_argument(
-        "-c", "--category",
-        choices=list(CHANGELOG_CATEGORIES.keys()),
+        "-c",
+        "--category",
+        choices=sorted(CHANGELOG_CATEGORIES),
         default="feature",
-        help=f"The changelog category/header (default: feature).\nChoices: {', '.join(CHANGELOG_CATEGORIES.keys())}"
     )
+    parser.add_argument("-d", "--dry-run", action="store_true")
+    parser.add_argument("--commit", action="store_true", help="Commit updated release files")
+    parser.add_argument("--tag", action="store_true", help="Tag the new commit; requires --commit")
+    parser.add_argument("--push", action="store_true", help="Push commit and tags; requires --tag")
+    args = parser.parse_args(argv)
 
-    parser.add_argument(
-        "-d", "--dry-run",
-        action="store_true",
-        help="Simulate the entire process without writing files or running git commands."
-    )
-
-    return parser.parse_args()
+    if args.tag and not args.commit:
+        parser.error("--tag requires --commit")
+    if args.push and not args.tag:
+        parser.error("--push requires --tag")
+    return args
 
 
-def main():
-    args = parse_args()
-    
-    # 2. Check for uncommitted changes first
-    if not args.dry_run and not is_working_dir_clean():
-        print(Fore.RED + "❌ Working directory is not clean. Commit or stash changes before releasing.")
-        sys.exit(1)
-        
-    raw_message = args.message
-    # Remove surrounding quotes from the message
-    if raw_message.startswith(('"""', "'''")) and raw_message.endswith(('"""', "'''")):
-        message = raw_message.strip().strip('"').strip("'")
-    else:
-        message = raw_message.strip('"').strip("'")
-    
-    if not message.strip():
-        print(Fore.RED + "❌ Commit message cannot be empty.")
-        sys.exit(1)
+def main(argv: Sequence[str] | None = None) -> int:
+    try:
+        args = parse_args(argv)
+        old_version = get_current_version()
+        new_version = bump_version(old_version, args.bump)
 
-    current_version = get_current_version()
-    new_version = bump_version(current_version, args.bump)
-    
-    # Update files returns the list of files to be added to git
-    files_to_add = update_files(new_version, message, args.category, dry_run=args.dry_run)
-    
-    # Perform git operations
-    git_commit_and_tag(new_version, message, files_to_add, dry_run=args.dry_run)
+        if args.commit and not args.dry_run and not working_tree_is_clean():
+            raise RuntimeError(
+                "Git release actions require a clean working tree. Commit project changes first, "
+                "or omit --commit to update release files locally."
+            )
 
-    print(Style.BRIGHT + Fore.GREEN + f"\n🎉 Done! {'(Preview only)' if args.dry_run else ''} Released version v{new_version}\n")
+        changed_files = update_files(
+            old_version,
+            new_version,
+            args.message,
+            args.category,
+            dry_run=args.dry_run,
+        )
+
+        if args.dry_run:
+            if args.commit:
+                print("Git commit/tag/push actions were skipped by --dry-run.")
+            return 0
+
+        run_git_release(
+            new_version,
+            args.message,
+            changed_files,
+            commit=args.commit,
+            tag=args.tag,
+            push=args.push,
+        )
+        print(f"Prepared TraceForge v{new_version}.")
+        return 0
+    except (FileNotFoundError, ValueError, RuntimeError, subprocess.CalledProcessError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

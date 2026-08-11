@@ -239,14 +239,12 @@ Throughout every phase:
 
 This document describes **how a TraceForge project progresses.**
 
-Other methodology documents explain how individual parts of that workflow are carried out, including:
+Related methodology documents own specific parts of that workflow:
 
-- Conversation Workflow
-- AI Collaboration Guide
-- Context Compression
-- Session Handoff
-- Versioning Strategy
-- Git Workflow
-- Documentation Standards
+- Conversation Workflow governs request-to-delivery work.
+- AI Collaboration Guide governs human and AI responsibilities.
+- Context Compression governs durable knowledge selection.
+- Session Continuity governs handoffs and resumption.
+- Engineering Review Checklist governs delivery verification.
 
 Together, these documents form the complete TraceForge methodology.

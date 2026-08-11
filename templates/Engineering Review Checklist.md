@@ -4,29 +4,39 @@
 
 > **How must a change be verified before completion?**
 
-Use the sections relevant to the change. Record evidence for every material concern; mark non-applicable sections with a reason.
+Use only sections relevant to the change. Record evidence for every material concern and mark a material but non-applicable section with a reason.
+
+## Intent and Authority
+
+- [ ] The delivered outcome matches the request and stated scope.
+- [ ] Destructive actions, external effects, releases, and scope expansion had explicit authority.
+- [ ] Unrelated and user-owned changes were preserved.
 
 ## Architecture
 
 - [ ] Responsibilities and ownership remain clear.
 - [ ] Boundaries and dependency direction are preserved or explicitly changed.
-- [ ] Existing solutions and simpler alternatives were considered.
-- [ ] Material architecture decisions have an ADR.
+- [ ] Existing solutions and simpler alternatives were considered where material.
+- [ ] Accepted consequential architecture decisions have an ADR.
 
 ## Consistency
 
 - [ ] Naming, conventions, and interfaces fit the existing project.
 - [ ] No duplicate responsibility or contradictory documentation was introduced.
 
-## Testing
+## Testing and Verification
 
-- [ ] Relevant behavior has proportionate automated or manual verification.
-- [ ] Failure paths and regressions were considered.
+- [ ] Relevant behavior received proportionate automated or manual verification.
+- [ ] Material failure paths and regressions were considered.
+- [ ] Passed, failed, and skipped checks are reported accurately.
+- [ ] Partial or blocked work is not presented as complete.
 
-## Documentation
+## Documentation and Continuity
 
-- [ ] Permanent knowledge was updated in its canonical location.
+- [ ] Durable knowledge was updated in its canonical location.
 - [ ] User, operator, or contributor impact is documented when needed.
+- [ ] The canonical handoff reflects material current state at a meaningful stopping point.
+- [ ] The handoff links to permanent records instead of duplicating them.
 
 ## Migration and Backward Compatibility
 
@@ -40,5 +50,5 @@ Use the sections relevant to the change. Record evidence for every material conc
 
 ## Technical Debt
 
-- [ ] Debt reduced, introduced, accepted, or deferred is recorded when material.
-- [ ] Roadmap placement and follow-up ownership are explicit.
+- [ ] Material debt reduced, introduced, accepted, or deferred is recorded.
+- [ ] Roadmap placement, revisit conditions, and follow-up ownership are explicit.

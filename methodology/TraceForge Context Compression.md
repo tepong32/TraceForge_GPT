@@ -2,209 +2,59 @@
 
 **Answers the question:**
 
-> **How should project knowledge be compressed and preserved?**
+> **How should temporary work become durable project knowledge without preserving the whole conversation?**
 
----
+## Purpose
 
-# Purpose
+Development produces more information than should become permanent project memory. Context Compression preserves conclusions, decisions, and current state while allowing conversational exploration to expire.
 
-TraceForge recognizes that software development produces far more information than should become permanent project knowledge.
+The objective is not to preserve more information. It is to make future work require less reconstruction.
 
-Conversations contain questions, experiments, debugging, alternative ideas, and temporary reasoning. While valuable during development, not all of this information deserves to become part of the project's long-term understanding.
+## Knowledge Layers
 
-Context Compression is the process of preserving meaningful engineering knowledge while allowing temporary conversation to be discarded.
+### Temporary Conversation Knowledge
 
-The objective is not to reduce information.
+Questions, experiments, debugging paths, repeated explanations, speculative alternatives, and conversational reasoning exist to support current work. Discard them when they no longer affect a decision, risk, or next action.
 
-The objective is to preserve understanding.
+### Current Working State
 
----
+The active objective, completed and partial work, blockers, validation, assumptions, and next action belong in the canonical handoff. This state is replaceable and should remain small enough to resume quickly.
 
-# Philosophy
+### Durable Project Knowledge
 
-Project knowledge should grow continuously, even as individual conversations end.
+Architecture, accepted decisions, established conventions, material debt, released outcomes, and enduring constraints belong in canonical repository documentation. They survive handoff replacement and conversation loss.
 
-Every completed milestone should leave the project easier to understand, maintain, and continue than before.
+## Compression Process
 
-Context should become smaller.
+At a meaningful stopping point:
 
-Understanding should become larger.
+1. Identify what changed in the project or its understanding.
+2. Discard conversational material that does not affect future work.
+3. Move durable conclusions to their canonical owner.
+4. Update the handoff with only current resumable state.
+5. Link the handoff to permanent records rather than copying them.
+6. Remove resolved handoff content once its durable consequences are preserved.
 
----
+## Preserve
 
-# The Three Layers of Knowledge
+Preserve information when losing it would cause unsafe continuation, repeated investigation, or loss of architectural intent. This includes:
 
-TraceForge organizes knowledge into three distinct layers.
+- accepted decisions and material tradeoffs;
+- rejected approaches whose reason prevents repeated work;
+- incomplete implementation state and user-owned changes;
+- known failures, risks, and compatibility constraints;
+- validation results and unverified assumptions;
+- roadmap or milestone consequences;
+- the exact next starting point.
 
-## Temporary Knowledge
+## Discard
 
-Temporary knowledge exists only to solve the current problem.
+Do not preserve greetings, filler, full transcripts, hidden reasoning, large raw logs, superseded plans, repeated documentation, or unsuccessful experiments that no longer influence the project.
 
-Examples include:
+## Staleness
 
-- debugging sessions,
-- exploratory discussions,
-- rejected ideas,
-- implementation experiments,
-- conversational reasoning.
+Compression does not make a snapshot timeless. A handoff must retain enough source identity to be compared with the repository. When the branch, revision, release, or material working state differs, reconcile the snapshot before relying on it.
 
-Temporary knowledge serves development but does not become part of the project's permanent memory.
+## Ownership
 
-It may be discarded once its purpose has been fulfilled.
-
----
-
-## Session Knowledge
-
-Session knowledge captures meaningful progress made during a development session.
-
-Examples include:
-
-- completed work,
-- architectural decisions,
-- roadmap progress,
-- pending objectives,
-- important discoveries.
-
-Session knowledge prepares the next development session without requiring the entire conversation to be retained.
-
----
-
-## Project Knowledge
-
-Project knowledge represents the long-term understanding of the project.
-
-Examples include:
-
-- architecture,
-- methodology,
-- documented conventions,
-- established workflows,
-- accepted design decisions,
-- permanent project documentation.
-
-Project knowledge belongs in the repository.
-
-It should survive individual conversations, development environments, and AI implementations.
-
----
-
-# What Should Be Preserved
-
-Context Compression should preserve information that improves future development.
-
-Examples include:
-
-- architectural decisions,
-- completed milestones,
-- accepted conventions,
-- project structure,
-- design rationale,
-- lessons learned,
-- important trade-offs,
-- roadmap evolution.
-
-If losing the information would make the project harder to continue in the future, it should be preserved.
-
----
-
-# What Should Be Discarded
-
-Not every conversation contributes to the project's permanent understanding.
-
-Examples of information that generally should not be preserved include:
-
-- greetings,
-- conversational filler,
-- repeated explanations,
-- temporary debugging,
-- implementation dead ends,
-- superseded approaches,
-- obsolete plans,
-- transient reasoning.
-
-The repository should preserve conclusions rather than conversations.
-
----
-
-# When Compression Should Occur
-
-Context Compression should occur after meaningful progress has been achieved.
-
-Typical opportunities include:
-
-- completing a milestone,
-- finalizing an architectural decision,
-- finishing a feature,
-- concluding a refactor,
-- ending a development session.
-
-Compression is a deliberate engineering activity rather than a continuous process.
-
----
-
-# Compression Principles
-
-## Preserve Meaning, Not Conversation
-
-The objective is to retain what was learned rather than everything that was said.
-
-Engineering knowledge is more valuable than conversational history.
-
----
-
-## Distill Rather Than Summarize
-
-Compression should identify the essential understanding produced by development.
-
-The result should communicate decisions, reasoning, and outcomes rather than replaying discussion.
-
----
-
-## Preserve Decisions
-
-Future developers benefit more from understanding why decisions were made than from reading every conversation that led to them.
-
-Where appropriate, important rationale should accompany major architectural decisions.
-
----
-
-## Eliminate Redundancy
-
-Information that already exists within permanent documentation should not be repeated elsewhere.
-
-Each piece of project knowledge should have a clear, authoritative location.
-
----
-
-## Favor Long-Term Value
-
-Knowledge should be preserved according to its future usefulness rather than its immediate importance during development.
-
-Temporary complexity often produces permanent simplicity.
-
----
-
-# Repository as Permanent Memory
-
-The repository serves as TraceForge's permanent memory.
-
-Documentation should contain the project's accumulated understanding rather than its conversational history.
-
-A project should remain understandable even if every previous conversation disappears.
-
----
-
-# Relationship to the Methodology
-
-This document defines **how project knowledge is preserved over time.**
-
-Other methodology documents describe:
-
-- why the project exists,
-- how projects progress,
-- how development conversations progress,
-- how humans and AI collaborate,
-- how sessions transition between conversations.
-
-Together, they ensure that knowledge accumulates continuously throughout the lifetime of a TraceForge project.
+This document owns the boundary between temporary, current, and durable knowledge. Session Continuity owns the handoff schema and resume protocol. Canonical project documents own permanent truth.
