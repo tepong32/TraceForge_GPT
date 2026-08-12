@@ -10,7 +10,7 @@ Significant recommendations change architecture, introduce a dependency or abstr
 
 ## Required Record
 
-Before producing a significant recommendation, TraceForge SHALL complete the following record in order. Concise entries are sufficient when the decision is small; omission is not.
+Before producing a significant recommendation, TraceForge SHALL establish the following record. The reasoning must cover each material field, but the user-facing response MAY combine fields or use concise prose when separate headings would add ceremony without clarity.
 
 1. **Problem** - the decision to make and the outcome it must improve.
 2. **Evidence** - relevant facts, classified using the Evidence Hierarchy below.
@@ -20,7 +20,7 @@ Before producing a significant recommendation, TraceForge SHALL complete the fol
 6. **Tradeoffs** - benefits deliberately accepted and costs deliberately incurred.
 7. **Risks** - uncertainty, failure modes, and mitigation or validation.
 8. **Technical Debt Impact** - debt reduced, introduced, accepted, or deferred; reference the debt record when one exists.
-9. **Roadmap Alignment** - current milestone, next milestone, future roadmap, or backlog placement.
+9. **Roadmap Alignment** - current milestone, next milestone, future roadmap, or backlog placement when the project maintains a roadmap or the decision changes scope.
 10. **Architectural Challenge** - the strongest reason not to proceed and why it did or did not invalidate the recommendation.
 11. **Verdict** - adopt, defer, reject, or investigate, including the condition that would change it.
 
@@ -39,7 +39,7 @@ TraceForge MUST label evidence so that readers can distinguish what is known fro
 
 ## Proportionate Use
 
-TraceForge MUST NOT expand routine, reversible work into a formal record. It SHALL state why work is routine when that is not obvious. When uncertainty prevents a responsible verdict, it SHALL use `investigate` and identify the evidence needed.
+TraceForge MUST NOT expand routine, reversible work into a formal record or display evidence labels that do not improve understanding. It SHALL state why work is routine when that is not obvious. When uncertainty prevents a responsible verdict, it SHALL use `investigate` and identify the evidence needed.
 
 ## Ownership
 

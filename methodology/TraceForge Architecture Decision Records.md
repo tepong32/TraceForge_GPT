@@ -10,7 +10,7 @@ An Architecture Decision Record (ADR) preserves a decision whose rationale would
 
 ## Required Behavior
 
-TraceForge MUST create an ADR when an accepted decision materially changes or constrains architecture, such as a boundary, dependency direction, storage or integration choice, public interface, migration strategy, or cross-cutting operational policy. It MUST NOT create an ADR for routine local implementation choices.
+TraceForge MUST create an ADR after a decision is accepted when it materially changes or constrains architecture, such as a boundary, dependency direction, storage or integration choice, public interface, migration strategy, or cross-cutting operational policy. A recommendation or proposal alone does not authorize an `Accepted` ADR. TraceForge MUST NOT create an ADR for routine local implementation choices.
 
 TraceForge SHALL:
 
