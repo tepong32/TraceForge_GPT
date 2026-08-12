@@ -6,16 +6,16 @@
 
 - **Last updated:** 2026-08-12 Asia/Singapore
 - **Release:** v0.5.0 Collaborative Execution
-- **Active milestone:** v0.5 release complete; observation and feedback follow
-- **Branch:** `codex/traceforge-v0.5-collaborative-execution`
-- **Source commit:** `30b16a4` (v0.5 implementation); this handoff is finalized in the tagged release commit.
-- **Working tree:** Clean at the `v0.5.0` tagged release commit.
+- **Active milestone:** v0.6 Applied Knowledge foundation complete; release preparation pending
+- **Branch:** `codex/traceforge-v0.6-knowledge-base`
+- **Source commit:** `43a2125` (Applied Knowledge implementation); this handoff is finalized in the following branch commit.
+- **Working tree:** Clean at the finalized handoff commit.
 - **Snapshot state:** Current
 
 ## Current Objective
 
-- **Outcome:** Observe v0.5 in real project use and collect evidence for any refinement.
-- **Scope:** Methodology behavior, session handoffs, release metadata, release tooling, and repository consistency tests.
+- **Outcome:** Establish a reusable knowledge-base layer and incorporate generalized Excel 365 workbook engineering lessons.
+- **Scope:** Knowledge ownership and evidence maturity, spreadsheet assessment, the Excel 365 guide, methodology integration, ADR, and validation.
 - **Status:** Ready
 
 ## Completed Work
@@ -25,32 +25,41 @@
 - Updated handoff and review templates, added ADR-0002, and repaired release documentation and tooling.
 - Added standard-library release-tool and repository-consistency tests.
 - Completed unit, link, version, dry-run, syntax, whitespace, and stale-reference validation.
+- Added the Applied Knowledge taxonomy and spreadsheet category.
+- Distilled the Phase 5 workbook lessons into a reusable Excel 365 guide while excluding payroll-specific business rules.
+- Added ADR-0003 and integrated Applied Knowledge with the runtime, methodology, context compression, and project workflow.
+- Added evidence-maturity labels so one-project observations are not presented as broadly replicated facts.
+- Added Spreadsheet Assessment and Business-Rule Discovery with an assumption register, alternative-explanation challenge, cost-of-error gate, and original-design review standard.
+- Expanded Excel discovery coverage for macros, queries, connections, pivots, protection, locale, calculation mode, cached values, and date systems.
+- Added first-class handling for Excel Notes and threaded Comments, including multilingual slang, code-switching, keyword-only annotations, project glossary entries, privacy restraint, and round-trip capability gates.
 
 ## Work in Progress
 
-- No implementation work remains for v0.5.
+- No implementation work remains for this increment. The changes remain under `Unreleased`; VERSION is still 0.5.0 and no v0.6 tag exists.
 
 ## Decisions
 
 - **Accepted:** Collaborative Execution and Reliable Continuity; see [ADR-0002](decisions/ADR-0002-adopt-collaborative-execution-and-reliable-continuity.md).
+- **Accepted:** Applied Knowledge remains separate from core methodology and project truth; see [ADR-0003](decisions/ADR-0003-adopt-applied-knowledge-layer.md).
 - **Rejected:** Handoff-only-in-conversation and repository-only handoff models; ADR-0002 records why the two-form model was selected.
 - **Assumptions:** `SESSION_HANDOFF.md` is tracked by default; projects may document another canonical location.
 
 ## Risks and Blockers
 
-- No known blocker remains. Revisit the continuity model if real use exposes stale handoffs, duplication, or frequent merge conflicts.
+- The shared ChatGPT page was unavailable through the web fetch endpoint; the user-provided Phase 5 lesson file supplied the detailed source material.
+- Project-specific payroll rules were intentionally not promoted to universal guidance.
 
 ## Validation
 
-- **Passed:** 11 standard-library unit and repository-consistency tests; release-helper v0.6 preview dry run; Python syntax compilation; `git diff --check`; stale-reference search.
+- **Passed:** 16 standard-library tests; local Markdown links; release-version consistency; knowledge-guide discovery; evidence-posture and revisit-boundary checks; assumption-visibility guard; multilingual annotation-handling guard; project-rule exclusion guard; Python syntax compilation; terminology search; `git diff --check`.
 - **Failed:** None.
-- **Skipped:** No applicable validation was skipped.
+- **Skipped:** The shared conversation page was not retrievable through the web fetch endpoint; the attached Phase 5 lesson document was reviewed in full instead. No Excel workbook was supplied or modified, so workbook execution testing is not applicable.
 
 ## Next Starting Point
 
-- **Next objective:** Apply v0.5 during normal TraceForge work and evaluate whether new conversations resume with less context reconstruction.
-- **First step:** Use this handoff to start the next meaningful TraceForge conversation and reconcile it against the repository.
-- **Completion criteria:** Gather concrete evidence about handoff usefulness, staleness, duplication, and request-to-delivery proportionality.
+- **Next objective:** Use and review the merged Applied Knowledge foundation, then decide the remaining scope and release criteria for v0.6.0.
+- **First step:** Update TF's reference ZIP and exercise both spreadsheet guides against the next workbook assessment.
+- **Completion criteria:** Real use confirms that TF reads annotations, exposes assumptions, preserves project-specific boundaries, and handles Excel compatibility without losing workbook features.
 
 ## Open Questions
 
