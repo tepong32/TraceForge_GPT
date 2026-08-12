@@ -40,6 +40,13 @@ TraceForge is organized by responsibility. Each document owns one engineering qu
 
 - [Project Workflow](TraceForge%20Project%20Workflow.md) - How a project progresses from discovery through maintenance.
 
+## Applied Knowledge
+
+- [Applied Knowledge Index](../knowledge/README.md) - How reusable project lessons are admitted and categorized.
+- [Spreadsheet Knowledge](../knowledge/spreadsheets/README.md) - Reusable spreadsheet and workbook engineering guides.
+
+Applied Knowledge is consulted when its subject matches the work. It supplements rather than changes the methodology reading order.
+
 ## Reading Order
 
 1. Manifesto

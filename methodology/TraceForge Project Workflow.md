@@ -137,6 +137,8 @@ Document:
 - methodology improvements,
 - lessons learned.
 
+When a demonstrated lesson is reusable beyond the project, distill it into Applied Knowledge. Keep the originating project's business rules in that project's documentation.
+
 The repository serves as the project's permanent memory.
 
 Documentation should preserve understanding, not duplicate code.

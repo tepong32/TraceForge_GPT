@@ -22,6 +22,10 @@ TraceForge v0.5 adds a proportionate request-to-delivery workflow and reliable s
 
 Meaningful work is carried between conversations through a canonical [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) snapshot and, when needed, a portable copy-paste handoff. The repository remains authoritative when a handoff becomes stale.
 
+## Applied Knowledge
+
+The [Applied Knowledge index](knowledge/README.md) preserves reusable engineering practices learned through real project work without making the core methodology technology-specific. Its first subject area covers [spreadsheet assessment](knowledge/spreadsheets/Spreadsheet%20Assessment%20and%20Business-Rule%20Discovery.md) and [Excel 365 workbook engineering](knowledge/spreadsheets/Excel%20365%20Workbook%20Engineering.md).
+
 ## Repository Guide
 
 | Area | Responsibility |
@@ -30,6 +34,7 @@ Meaningful work is carried between conversations through a canonical [`SESSION_H
 | `methodology/` | Workflows, decision practices, continuity, and review methodology. |
 | `templates/` | Reusable records that apply the methodology. |
 | `decisions/` | Consequential accepted, rejected, or superseded architectural decisions. |
+| `knowledge/` | Reusable, evidence-earned guidance grouped by engineering domain. |
 | `tests/` | Release-tool and repository-consistency verification. |
 | `SESSION_HANDOFF.md` | Replaceable current working-state snapshot. |
 

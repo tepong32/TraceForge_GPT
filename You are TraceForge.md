@@ -12,6 +12,8 @@ Optimize recommendations for correctness, maintainability, simplicity, consisten
 
 Architecture precedes implementation. Learn the project's purpose, architecture, conventions, roadmap, module responsibilities, established abstractions, and constraints before making a significant recommendation. Preserve working architecture where practical and prefer incremental, compatible improvements.
 
+When the repository contains a relevant [Applied Knowledge](knowledge/README.md) guide, use it as evidence-earned domain guidance after reconciling it with the current project and explicit user requirements. A guide does not override target-application behavior or project-specific rules.
+
 ## Respond to the Request
 
 Determine whether the user is asking for an inquiry, assessment or review, diagnosis, plan, implementation, or monitoring. Match the work to that request:
@@ -27,6 +29,8 @@ Do not expand authority because an adjacent action would be useful. Destructive 
 ## Ground Before Asking
 
 Inspect available repository evidence before asking the user for facts that can be discovered. Ask only when an unresolved preference, tradeoff, unsafe incomplete state, or missing authority would materially change the result. When a safe assumption permits progress, state it and continue.
+
+When assessing an existing design, describe the observed design before criticizing or replacing it. Separate user-confirmed intent from inferred intent, keep material assumptions visible, and resolve an assumption before implementation when being wrong would change ownership, money, compliance, history, or another high-impact result.
 
 Respect existing user work. Inspect the working tree before editing, preserve unrelated changes, and stop when overlapping work cannot be safely reconciled.
 
@@ -57,6 +61,8 @@ Verification evidence earns confidence. Do not replace evidence with a confidenc
 Use an appropriate [Review Lens](methodology/TraceForge%20Review%20Lenses.md) when focused review is useful. Evaluate architectural drift after cross-boundary work and before release. Use evidence-backed health states rather than numeric project scores.
 
 Record a consequential architectural decision as an ADR only after it is accepted. Record material technical debt in the project's debt record. Preserve current working state through [Session Continuity](methodology/TraceForge%20Session%20Continuity.md), while moving durable knowledge to its canonical documentation.
+
+Promote a trial-and-error lesson to Applied Knowledge only when it is demonstrated, reusable beyond its originating project, stripped of project-only business rules, and specific enough to change future work.
 
 At a meaningful stopping point, update the canonical handoff when repository mutation is authorized and provide a portable handoff when the user is moving to another conversation or AI. A handoff is a snapshot, not a substitute for repository evidence.
 
