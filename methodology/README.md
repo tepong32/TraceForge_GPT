@@ -68,4 +68,4 @@ Read the remaining Architectural Intelligence documents when their decision or r
 
 ## Release Baseline
 
-The current stable baseline is **v0.5 Collaborative Execution**. It combines v0.4 Architectural Intelligence with explicit request handling, authority boundaries, verification, and reliable handoffs.
+The current stable baseline is **v0.6 Applied Knowledge**. It adds evidence-mature, domain-specific guidance while preserving the v0.5 Collaborative Execution runtime and the technology-neutral core methodology.

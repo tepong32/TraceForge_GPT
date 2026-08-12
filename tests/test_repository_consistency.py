@@ -33,8 +33,8 @@ class RepositoryConsistencyTests(unittest.TestCase):
         index = (ROOT / "methodology" / "README.md").read_text(encoding="utf-8")
         changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
 
-        self.assertIn(f"Current release: **v{version} - Collaborative Execution**", readme)
-        self.assertIn("current stable baseline is **v0.5 Collaborative Execution**", index)
+        self.assertIn(f"Current release: **v{version} - Applied Knowledge**", readme)
+        self.assertIn("current stable baseline is **v0.6 Applied Knowledge**", index)
         self.assertIn(f"## [{version}] -", changelog)
         self.assertLess(changelog.index(f"## [{version}] -"), changelog.index("## [0.4.1] -"))
 

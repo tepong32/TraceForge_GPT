@@ -24,7 +24,7 @@ Meaningful work is carried between conversations through a canonical [`SESSION_H
 
 ## Applied Knowledge
 
-The [Applied Knowledge index](knowledge/README.md) preserves reusable engineering practices learned through real project work without making the core methodology technology-specific. Its first subject area covers [spreadsheet assessment](knowledge/spreadsheets/Spreadsheet%20Assessment%20and%20Business-Rule%20Discovery.md) and [Excel 365 workbook engineering](knowledge/spreadsheets/Excel%20365%20Workbook%20Engineering.md).
+TraceForge v0.6 introduces the [Applied Knowledge index](knowledge/README.md), preserving reusable engineering practices learned through real project work without making the core methodology technology-specific. Its first subject area covers [spreadsheet assessment](knowledge/spreadsheets/Spreadsheet%20Assessment%20and%20Business-Rule%20Discovery.md) and [Excel 365 workbook engineering](knowledge/spreadsheets/Excel%20365%20Workbook%20Engineering.md).
 
 ## Repository Guide
 
@@ -48,4 +48,4 @@ Start with the Conversation Workflow and Runtime Contract. For a significant dec
 
 ## Version
 
-Current release: **v0.5.0 - Collaborative Execution**.
+Current release: **v0.6.0 - Applied Knowledge**.

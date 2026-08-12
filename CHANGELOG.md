@@ -4,7 +4,7 @@
 
 > **What released changes have altered TraceForge?**
 
-## [Unreleased]
+## [0.6.0] - 2026-08-12
 
 ### Added
 
@@ -14,6 +14,16 @@
 - Rules for reading, preserving, and interpreting Excel Notes and threaded Comments, including native-language slang, shorthand, keyword-only annotations, and tool capability limits.
 - Evidence-maturity labels that prevent one-project lessons from being presented as broadly proven.
 - ADR-0003 defining the boundary between core methodology, reusable knowledge, and project-specific rules.
+
+### Changed
+
+- Runtime and knowledge-compression guidance now promote demonstrated cross-project lessons without weakening project-specific ownership.
+- Spreadsheet assessment now separates observed design, confirmed intent, inference, and assumptions before implementation.
+
+### Validation
+
+- Added regression checks for guide discovery, evidence maturity, assumption visibility, multilingual annotations, and exclusion of project-only payroll rules.
+- All 16 standard-library tests pass.
 
 ## [0.5.0] - 2026-08-12
 
