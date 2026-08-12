@@ -5,16 +5,16 @@
 ## Snapshot
 
 - **Last updated:** 2026-08-12 Asia/Singapore
-- **Release:** v0.5.0 Collaborative Execution
-- **Active milestone:** v0.6 Applied Knowledge foundation complete; release preparation pending
-- **Branch:** `codex/traceforge-v0.6-knowledge-base`
-- **Source commit:** `43a2125` (Applied Knowledge implementation); this handoff is finalized in the following branch commit.
-- **Working tree:** Clean at the finalized handoff commit.
+- **Release:** v0.6.0 Applied Knowledge
+- **Active milestone:** v0.6 released; evidence collection for the next increment
+- **Branch:** `master`
+- **Source commit:** `d0d2131` (v0.6.0 release metadata); this handoff is finalized in the tagged release commit.
+- **Working tree:** Clean at the `v0.6.0` tagged release commit.
 - **Snapshot state:** Current
 
 ## Current Objective
 
-- **Outcome:** Establish a reusable knowledge-base layer and incorporate generalized Excel 365 workbook engineering lessons.
+- **Outcome:** Apply v0.6 in real workbook work and collect evidence for the next Applied Knowledge increment.
 - **Scope:** Knowledge ownership and evidence maturity, spreadsheet assessment, the Excel 365 guide, methodology integration, ADR, and validation.
 - **Status:** Ready
 
@@ -35,7 +35,7 @@
 
 ## Work in Progress
 
-- No implementation work remains for this increment. The changes remain under `Unreleased`; VERSION is still 0.5.0 and no v0.6 tag exists.
+- No implementation or release work remains for v0.6.0.
 
 ## Decisions
 
@@ -57,9 +57,9 @@
 
 ## Next Starting Point
 
-- **Next objective:** Use and review the merged Applied Knowledge foundation, then decide the remaining scope and release criteria for v0.6.0.
+- **Next objective:** Use and review the released Applied Knowledge foundation, then define the next evidence-backed knowledge area.
 - **First step:** Update TF's reference ZIP and exercise both spreadsheet guides against the next workbook assessment.
-- **Completion criteria:** Real use confirms that TF reads annotations, exposes assumptions, preserves project-specific boundaries, and handles Excel compatibility without losing workbook features.
+- **Completion criteria:** Real use confirms that TF reads annotations, exposes assumptions, preserves project-specific boundaries, and handles Excel compatibility without losing workbook features; new lessons meet the Applied Knowledge admission standard.
 
 ## Open Questions
 
