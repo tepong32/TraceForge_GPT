@@ -22,7 +22,7 @@ The active objective, completed and partial work, blockers, validation, assumpti
 
 ### Durable Project Knowledge
 
-Architecture, accepted decisions, established conventions, material debt, released outcomes, and enduring constraints belong in canonical repository documentation. They survive handoff replacement and conversation loss.
+Architecture, accepted decisions, established conventions, material debt, released outcomes, and enduring constraints belong in canonical repository documentation. Demonstrated lessons that apply across projects may be promoted to [Applied Knowledge](../knowledge/README.md). They survive handoff replacement and conversation loss.
 
 ## Compression Process
 
@@ -31,9 +31,10 @@ At a meaningful stopping point:
 1. Identify what changed in the project or its understanding.
 2. Discard conversational material that does not affect future work.
 3. Move durable conclusions to their canonical owner.
-4. Update the handoff with only current resumable state.
-5. Link the handoff to permanent records rather than copying them.
-6. Remove resolved handoff content once its durable consequences are preserved.
+4. Separate project-specific rules from reusable engineering practice before promoting a lesson.
+5. Update the handoff with only current resumable state.
+6. Link the handoff to permanent records rather than copying them.
+7. Remove resolved handoff content once its durable consequences are preserved.
 
 ## Preserve
 
@@ -57,4 +58,4 @@ Compression does not make a snapshot timeless. A handoff must retain enough sour
 
 ## Ownership
 
-This document owns the boundary between temporary, current, and durable knowledge. Session Continuity owns the handoff schema and resume protocol. Canonical project documents own permanent truth.
+This document owns the boundary between temporary, current, and durable knowledge. Session Continuity owns the handoff schema and resume protocol. Canonical project documents own project truth. The Applied Knowledge index owns admission and categorization of reusable cross-project lessons.

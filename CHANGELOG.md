@@ -4,6 +4,17 @@
 
 > **What released changes have altered TraceForge?**
 
+## [Unreleased]
+
+### Added
+
+- Applied Knowledge layer for reusable, evidence-earned engineering guidance organized by subject rather than originating project.
+- Excel 365 Workbook Engineering guide derived from phased workbook compatibility and validation lessons.
+- Spreadsheet Assessment and Business-Rule Discovery guide with an explicit assumption register and implementation-risk gates.
+- Rules for reading, preserving, and interpreting Excel Notes and threaded Comments, including native-language slang, shorthand, keyword-only annotations, and tool capability limits.
+- Evidence-maturity labels that prevent one-project lessons from being presented as broadly proven.
+- ADR-0003 defining the boundary between core methodology, reusable knowledge, and project-specific rules.
+
 ## [0.5.0] - 2026-08-12
 
 ### Added

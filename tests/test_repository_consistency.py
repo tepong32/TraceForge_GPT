@@ -58,6 +58,71 @@ class RepositoryConsistencyTests(unittest.TestCase):
             for section in required:
                 self.assertIn(f"## {section}", content, f"{relative_path} lacks {section}")
 
+    def test_applied_knowledge_guides_are_discoverable(self):
+        root_index = (ROOT / "knowledge" / "README.md").read_text(encoding="utf-8")
+        category = ROOT / "knowledge" / "spreadsheets"
+        category_index = (category / "README.md").read_text(encoding="utf-8")
+
+        self.assertIn("spreadsheets/README.md", root_index)
+        for guide in category.glob("*.md"):
+            if guide.name == "README.md":
+                continue
+            encoded_name = guide.name.replace(" ", "%20")
+            self.assertIn(encoded_name, category_index, f"Unindexed guide: {guide.name}")
+
+    def test_excel_guide_keeps_project_rules_out_of_universal_guidance(self):
+        guide = (
+            ROOT / "knowledge" / "spreadsheets" / "Excel 365 Workbook Engineering.md"
+        ).read_text(encoding="utf-8")
+        project_only_terms = ["Item No.", "Scheduler → Monthly", "tranche progression"]
+        for term in project_only_terms:
+            self.assertNotIn(term, guide)
+
+    def test_applied_knowledge_guides_state_evidence_and_revision_boundaries(self):
+        guides = [
+            path
+            for path in (ROOT / "knowledge").rglob("*.md")
+            if path.name != "README.md"
+        ]
+        self.assertGreater(len(guides), 0)
+        for guide in guides:
+            content = guide.read_text(encoding="utf-8")
+            self.assertIn("## Evidence Posture", content, f"{guide} lacks evidence posture")
+            self.assertIn("## Revisit Conditions", content, f"{guide} lacks revisit conditions")
+
+    def test_assessment_guide_keeps_inference_visible(self):
+        guide = (
+            ROOT
+            / "knowledge"
+            / "spreadsheets"
+            / "Spreadsheet Assessment and Business-Rule Discovery.md"
+        ).read_text(encoding="utf-8")
+        for required in [
+            "Assumption Register",
+            "Alternative explanation",
+            "Cost if wrong",
+            "Original-Design Review Standard",
+        ]:
+            self.assertIn(required, guide)
+
+    def test_assessment_guide_handles_multilingual_excel_annotations(self):
+        guide = (
+            ROOT
+            / "knowledge"
+            / "spreadsheets"
+            / "Spreadsheet Assessment and Business-Rule Discovery.md"
+        ).read_text(encoding="utf-8")
+        for required in [
+            "Notes and Comments as Contextual Evidence",
+            "Multilingual, Slang, and Keyword-Only Annotations",
+            "original wording",
+            "working interpretation",
+            "project glossary",
+            "Tool-Capability Gate",
+            "threaded Comments",
+        ]:
+            self.assertIn(required, guide)
+
 
 if __name__ == "__main__":
     unittest.main()
