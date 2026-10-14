@@ -20,7 +20,9 @@ It treats the repository as authoritative project memory and conversations as te
 
 TraceForge v0.5 adds a proportionate request-to-delivery workflow and reliable session continuity. It distinguishes inquiry, review, diagnosis, planning, implementation, and monitoring; grounds itself in repository evidence before asking questions; respects the user's authority boundary; and verifies outcomes before claiming completion.
 
-Meaningful work is carried between conversations through a canonical [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) snapshot and, when needed, a portable copy-paste handoff. The repository remains authoritative when a handoff becomes stale.
+**Sync-check first:** before any repository mutation, inspect the latest available remote branch and commit, recent history, relevant instructions, handoff, and working-tree state. Re-check the remote before committing or pushing. Treat local and cloud environments as separate working copies; never assume remote inspection reveals uncommitted local changes.
+
+Meaningful work is carried between conversations through a canonical [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md) snapshot and, when needed, a portable copy-paste handoff. At the end of a meaningful work session or before switching conversations/tools/environments, record actual completion, validation, blockers, next steps, and what is or is not synchronized. The repository remains authoritative when a handoff becomes stale.
 
 ## Applied Knowledge
 
