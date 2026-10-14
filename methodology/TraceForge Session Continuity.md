@@ -77,6 +77,8 @@ When local and cloud environments are separate, each is a distinct working copy.
 
 A handoff is a checkpoint, not permission to overwrite the current repository. When the handoff's source commit or material state differs from current evidence, mark it Needs Reconciliation and reconcile before proceeding.
 
+This cross-environment rule is recorded in [ADR-0004](../decisions/ADR-0004-sync-check-first-collaboration-and-explicit-handoffs.md).
+
 ## Durable Knowledge Boundary
 
 Before replacing resolved handoff content, move lasting knowledge to its canonical owner:
