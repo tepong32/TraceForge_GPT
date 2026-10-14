@@ -16,6 +16,16 @@
 - **Working tree:** Clean | Dirty — identify relevant uncommitted or user-owned changes.
 - **Snapshot state:** Current | Needs Reconciliation
 
+## Synchronization State
+
+- **Remote checked:** YYYY-MM-DD HH:MM timezone, or Not Checked.
+- **Remote branch / commit:** Record the exact target branch and commit inspected.
+- **Local state:** Clean | Dirty | Not Observable — identify uncommitted, staged, untracked, or user-owned changes when known.
+- **Divergence:** In Sync | Local Ahead | Remote Ahead | Diverged | Unknown.
+- **Before next mutation:** State what must be fetched, reconciled, preserved, or confirmed.
+
+Do not label local state clean or synchronized if the active environment cannot inspect it. Before committing or pushing, re-check the remote branch and reconcile new changes.
+
 ## Current Objective
 
 - **Outcome:**
