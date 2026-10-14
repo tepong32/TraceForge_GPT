@@ -4,6 +4,13 @@
 
 > **What released changes have altered TraceForge?**
 
+## [Unreleased]
+
+### Changed
+
+- Made sync-check-first a mandatory pre-mutation gate, including remote rechecks before commits/pushes and explicit protection for separate local/cloud working copies.
+- Strengthened end-of-session handoffs to record actual validation, blockers, next actions, and synchronization state when switching conversations, tools, or environments.
+
 ## [0.6.0] - 2026-08-12
 
 ### Added
