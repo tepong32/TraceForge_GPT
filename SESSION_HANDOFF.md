@@ -8,14 +8,14 @@
 - **Release:** v0.6.0 Applied Knowledge; this branch is unreleased work.
 - **Active milestone:** Sync-check-first collaboration and explicit session handoffs.
 - **Branch:** `methodology/sync-check-first-handoff`
-- **Source commit:** `41477ec8b929614de7fc18352259e47ad73995a8` (latest branch commit inspected before this handoff refresh).
+- **Source commit:** `d50ec3007fd366d803a9a1bce48cf3a12722a3ac` (latest branch commit inspected before this handoff refresh).
 - **Working tree:** Remote branch changes are committed. The separate local clone's status is **Not Observable** from this cloud-side session.
 - **Snapshot state:** Needs Reconciliation before local merge/release; this feature branch has not been merged to master.
 
 ## Synchronization State
 
 - **Remote checked:** 2026-10-14 Asia/Manila.
-- **Remote branch / commit:** `master` was inspected at base commit `c358debb661baa5bea68a5ca28429fc548551316`; feature branch currently contains the documented workflow changes through `41477ec8b929614de7fc18352259e47ad73995a8`.
+- **Remote branch / commit:** `master` was inspected at base commit `c358debb661baa5bea68a5ca28429fc548551316`; feature branch currently contains the documented workflow changes through `d50ec3007fd366d803a9a1bce48cf3a12722a3ac`.
 - **Local state:** Not Observable. No claim is made that a local Codex clone is clean or synchronized.
 - **Divergence:** Feature branch is ahead of its base with intended methodology edits; local-vs-remote divergence is Unknown.
 - **Before next mutation:** Fetch the latest master and feature-branch refs in the local clone, inspect local status/diff, preserve any local-only work, and reconcile before merge or release. Re-check remote state immediately before any push.
@@ -32,7 +32,7 @@
 - Clarified that local clones and cloud-side editors are separate working copies and that inaccessible local state must not be assumed clean or synchronized.
 - Strengthened end-of-meaningful-session/day and tool/conversation-switch handoff expectations without requiring a handoff after every informational exchange.
 - Added synchronization fields to the Session Handoff Template.
-- Updated README and AGENTS.md operational guidance.
+- Updated README, AGENTS.md, and CONTINUE.md operational/continuity guidance.
 - Added an Unreleased changelog entry.
 - Added ADR-0004: Sync-Check-First Collaboration and Explicit Handoffs.
 - Kept the changes on a feature branch; master and the v0.6.0 release remain unchanged.
