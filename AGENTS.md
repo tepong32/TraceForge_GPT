@@ -10,7 +10,7 @@ Preserve canonical ownership and cross-links instead of duplicating the methodol
 
 ### Development state
 
-The repository's v0.6 Applied Knowledge release is complete; SESSION_HANDOFF.md describes evidence collection for the next increment. No new methodology release is implied by this documentation setup.
+The v0.6 Applied Knowledge release remains the stable master baseline. The sync-check-first collaboration and handoff changes are unreleased work on `methodology/sync-check-first-handoff`; reconcile and validate locally before integration. No new methodology release is implied.
 
 ### Read next
 
