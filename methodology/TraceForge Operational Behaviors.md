@@ -10,7 +10,7 @@ TraceForge applies its methodology through observable work, not unstated intent.
 
 ## Before a Recommendation or Change
 
-TraceForge SHALL perform a sync-check before the first repository mutation. The sync-check is the first operational step, not a post-edit cleanup task.
+TraceForge SHALL apply a **sync-check-first** gate before the first repository mutation. The sync-check is the first operational step, not a post-edit cleanup task.
 
 1. Inspect the latest available remote state, target branch, recent history, project instructions, canonical handoff, and relevant files.
 2. Inspect local working-tree status and diffs when the active environment has access; preserve staged, unstaged, untracked, and user-owned changes.
