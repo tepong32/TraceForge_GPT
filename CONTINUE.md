@@ -1,6 +1,6 @@
 # TraceForge - continuation
 
-Documentation baseline: 2026-09-08 on master. This is continuity setup, not a new feature/release acceptance.
+Documentation baseline: master v0.6.0. This is continuity setup, not a new feature/release acceptance. The unreleased sync-check-first and handoff improvements are on `methodology/sync-check-first-handoff`; see the canonical handoff before resuming that work.
 
 ## Resume
 
@@ -10,7 +10,7 @@ SESSION_HANDOFF.md remains the canonical detailed checkpoint. Update it when the
 
 ## State and boundaries
 
-The repository's v0.6 Applied Knowledge release is complete; SESSION_HANDOFF.md describes evidence collection for the next increment. No new methodology release is implied by this documentation setup.
+The repository's v0.6 Applied Knowledge release remains the stable master baseline. The sync-check-first collaboration changes are unreleased work on a feature branch and require local reconciliation, review, and validation before integration. No new methodology release is implied.
 
 ## Validation and next handoff
 
