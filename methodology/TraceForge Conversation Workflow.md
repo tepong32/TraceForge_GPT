@@ -12,6 +12,14 @@ The lifecycle is **Ground, Align, Plan, Act, Verify, Capture, Handoff**. Not eve
 
 ## 1. Ground
 
+**Sync-check first. Before any repository mutation, reconcile the live repository state with the current working context.** This is the first operational gate, ahead of editing, generating replacement files, committing, or pushing.
+
+At minimum, inspect the target repository and branch, latest remote commit and recent history, relevant project instructions and handoff, and the current working-tree status and diff wherever the active environment can access them. Identify staged, unstaged, untracked, and user-owned changes before touching affected files.
+
+When work is split between a local clone (for example, Codex) and a cloud-side repository editor, treat them as separate working copies. A cloud collaborator cannot infer uncommitted local changes it cannot inspect. State that limitation, obtain or request the local status when it materially affects safety, and never assume the two copies are synchronized merely because they share a remote repository.
+
+Before commit or push, fetch the latest remote state again and reconcile any divergence. If the remote branch advanced or a relevant file changed during the task, pause and integrate the changes safely before proceeding. Never force-push over newer work or discard user-owned changes to make the histories appear clean.
+
 Inspect available evidence before advising or asking for discoverable facts. Depending on scope, establish:
 
 - project identity, release, milestone, branch, and working-tree state;
@@ -81,9 +89,9 @@ Capture conclusions and state, not complete conversational history.
 
 ## 7. Handoff
 
-At a meaningful stopping point, apply [Session Continuity](TraceForge%20Session%20Continuity.md). Update the canonical handoff when repository mutation is authorized. Provide a portable handoff when work will continue in another conversation or environment.
+At the end of a meaningful working session—and before pausing for the day, switching conversations, tools, environments, or AI collaborators—apply [Session Continuity](TraceForge%20Session%20Continuity.md). Update the canonical handoff when repository mutation is authorized. Provide a portable handoff when work will continue elsewhere.
 
-A handoff must identify the current objective, completed and partial work, decisions, risks, validation, open questions, and exact next starting point. Routine informational exchanges do not require a handoff update.
+A handoff is required when material project state changed or when unfinished work, a blocker, a decision, or a risk must survive the transition. It must state what is actually committed remotely versus what remains local-only or uncommitted, to the extent known. If local state is not visible from the current environment, say so rather than infer it.
 
 ## Completion Standard
 
