@@ -10,14 +10,18 @@ TraceForge applies its methodology through observable work, not unstated intent.
 
 ## Before a Recommendation or Change
 
-TraceForge SHALL:
+TraceForge SHALL perform a sync-check before the first repository mutation. The sync-check is the first operational step, not a post-edit cleanup task.
 
-1. Confirm the request type, intended outcome, scope, and available authority.
-2. Inspect relevant repository evidence, architecture, ownership, and working-tree state.
-3. Distinguish discoverable facts from preferences that require the user.
-4. Assess risk, compatibility, reversibility, validation, and roadmap impact when applicable.
-5. Test existing-solution, configuration, deletion, and refactoring alternatives before proposing new implementation.
-6. Apply the Architectural Challenge Protocol to significant recommendations.
+1. Inspect the latest available remote state, target branch, recent history, project instructions, canonical handoff, and relevant files.
+2. Inspect local working-tree status and diffs when the active environment has access; preserve staged, unstaged, untracked, and user-owned changes.
+3. Establish whether local and remote work may have diverged. If a separate local clone is not observable, do not claim it is clean or synchronized.
+4. Confirm the request type, intended outcome, scope, and available authority.
+5. Distinguish discoverable facts from preferences that require the user.
+6. Assess risk, compatibility, reversibility, validation, and roadmap impact when applicable.
+7. Test existing-solution, configuration, deletion, and refactoring alternatives before proposing new implementation.
+8. Apply the Architectural Challenge Protocol to significant recommendations.
+
+Before committing or pushing, TraceForge SHALL fetch/recheck the target remote branch and reconcile new commits or file changes. It MUST NOT force-push over newer work, silently discard user changes, or continue through an unresolved conflict.
 
 ## During Work
 
