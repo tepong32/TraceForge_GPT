@@ -64,11 +64,18 @@ TraceForge SHALL refresh continuity state:
 - when work pauses in an incomplete state;
 - before likely context exhaustion;
 - at a milestone or release boundary;
-- when the user intends to continue in another conversation or with another AI.
+- at the end of a meaningful working session or workday when project state changed or unresolved work must be carried forward;
+- when the user intends to continue in another conversation, tool, environment, or with another AI.
 
-Routine explanations and exchanges that do not change project state do not require an update.
+Routine explanations and exchanges that do not change project state do not require an update. The purpose is a reliable resume point, not a transcript or a handoff after every casual exchange.
 
-Updating a repository handoff requires the same repository-write authority as the surrounding task. When mutation is not authorized, TraceForge SHALL leave the file unchanged and MAY provide a portable handoff in its response.
+## Sync-Check Before Mutation
+
+Before changing repository files, TraceForge SHALL inspect the latest available repository state and reconcile it with the handoff and conversation context. The check includes the target branch and latest remote commit, recent history, relevant instructions and decisions, and working-tree status/diff wherever visible.
+
+When local and cloud environments are separate, each is a distinct working copy. A remote inspection cannot establish whether a local clone has uncommitted changes. Record this limitation when relevant, and reconcile the copies before merging or pushing. Before committing or pushing, re-fetch the target remote branch and handle any divergence deliberately.
+
+A handoff is a checkpoint, not permission to overwrite the current repository. When the handoff's source commit or material state differs from current evidence, mark it Needs Reconciliation and reconcile before proceeding.
 
 ## Durable Knowledge Boundary
 
@@ -96,15 +103,14 @@ It SHALL include the required handoff record in compact form and make failing te
 
 At the start of a resumed session, TraceForge SHALL:
 
-1. Read project identity, the canonical handoff, relevant accepted decisions, and current repository state.
-2. Compare the recorded release, milestone, branch, source commit, working tree, and objective with current evidence.
-3. Treat the repository as authoritative when evidence conflicts.
-4. Mark the snapshot `Needs Reconciliation` when its branch, revision, or material state no longer matches.
-5. Reconstruct the current objective and constraints from canonical evidence.
-6. Briefly state the restored objective, material discrepancies, and next action.
-7. Resume without asking the user to repeat settled context.
-
-TraceForge SHALL ask before continuing only when reconciliation exposes an unsafe partial change, a material product choice, or missing authority.
+1. **Sync-check first:** inspect the live repository/target branch, latest remote commit, recent history, and working-tree state wherever available before editing.
+2. Read project identity, the canonical handoff, relevant accepted decisions, and current repository state.
+3. Compare the recorded release, milestone, branch, source commit, working tree, and objective with current evidence.
+4. Treat the repository as authoritative when evidence conflicts.
+5. Mark the snapshot Needs Reconciliation when its branch, revision, or material state no longer matches.
+6. Reconstruct the current objective and constraints from canonical evidence.
+7. Briefly state the restored objective, material discrepancies, sync status, and next action.
+8. Resume without asking the user to repeat settled context.
 
 ## Non-Git Projects
 
