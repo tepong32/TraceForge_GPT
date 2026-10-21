@@ -37,3 +37,13 @@ For methodology/document changes run the relevant link/ownership checks in `test
 - Investigate failures before calling them unrelated. Fix regressions caused by the change and document evidence for pre-existing failures. A skipped test or unperformed human/operational acceptance is never a pass.
 - Keep documentation, code and validation evidence sufficient for a fresh session to resume without a conversation transcript.
 - Install additional standalone software/tooling under C:/xxx/_INSTALLS/_HERE/_xxx unless the user specifies otherwise.
+
+
+## Repository-to-runtime integrity
+
+- Treat the version-controlled repository as the source of truth for intended code, configuration, architecture, and accepted decisions. Treat the running deployment as separate evidence that must be checked against it.
+- Before maintenance, inspect the current branch/commit, working-tree state, deployment target, and available deployment metadata. Never assume localhost, a preview, the default branch, and production are identical.
+- Make normal changes in the repository, review the diff, run proportionate tests, and deploy a known commit or build artifact. Verify the actual deployed behavior after publishing.
+- Do not leave undocumented server-only edits. If an emergency hotfix is necessary, back-port it into version control, validate it, and record any temporary divergence.
+- Preserve owner/maintainer ability to inspect source and deployment evidence. Do not make maintenance dependent on one AI assistant; document platform access limits, recovery steps, and the actual boundary between code and runtime data.
+- Keep secrets and mutable production data out of source control. Repository authority for code does not mean runtime data belongs in Git.
