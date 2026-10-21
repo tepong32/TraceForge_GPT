@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Repository-first source-of-truth and deployment-integrity rules: trace deployments to known commits, verify the running result rather than trusting deployment status, reconcile emergency hotfixes back into version control, and keep maintenance knowledge portable.
+
 **Answers the question:**
 
 > **What released changes have altered TraceForge?**
