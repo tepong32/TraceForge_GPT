@@ -153,6 +153,19 @@ A release represents a dependable checkpoint in the project's evolution.
 
 Working software is more valuable than unfinished perfection.
 
+### Deployment integrity
+
+Before and after deployment, preserve a traceable relationship between repository and runtime:
+
+- Record the repository, branch or release reference, and commit/build identifier being deployed whenever the platform supports it.
+- Verify the actual deployment target and configuration; do not infer production behavior from localhost, a preview, or a successful deployment message.
+- After deployment, inspect the running application and exercise representative workflows. Compare the result with the intended source and acceptance criteria.
+- If the platform builds from a different branch, generated files, or a separate deployment project, document that relationship explicitly.
+- If a hotfix must be applied outside version control, back-port it into the repository immediately and verify that the source-backed deployment contains the fix.
+- Never claim production verification when only a local build, static validation, or deployment status was checked.
+
+A deployment is complete only when the deployed version is identifiable and the relevant runtime checks have been reported honestly.
+
 ---
 
 ## 10. Learn
