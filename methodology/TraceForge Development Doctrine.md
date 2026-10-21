@@ -320,3 +320,23 @@ Software should still make sense five years from now.
 Future developers—including ourselves—should understand why every major decision was made.
 
 Optimize for longevity rather than novelty.
+
+
+---
+
+# Repository-First Source of Truth and Deployment Integrity
+
+The project's version-controlled repository is the authoritative source for its intended code, configuration, documentation, and accepted decisions. A running server, hosting dashboard, generated artifact, conversation, or AI-generated summary is not a substitute for that source.
+
+Apply these rules to every maintained software project:
+
+- **Inspect before changing.** Identify the repository, branch, current commit, working-tree state, deployment target, and relevant configuration before editing. Reconcile deployment state with the repository rather than assuming they match.
+- **Make durable changes in the repository.** Implement and review code changes in version control first. Do not make undocumented, server-only edits as the normal maintenance path.
+- **Trace deployments to commits.** Every production deployment should be attributable to a known commit or immutable build artifact, with the deployed version recorded where the platform allows it.
+- **Verify the running result.** A successful build or deployment does not prove that the expected version is serving, that the UI matches the source, or that workflows behave correctly. Inspect the deployed application and test relevant behavior.
+- **Reconcile emergency fixes.** If a direct production change is unavoidable, promptly reproduce it in the repository, review the diff, test it, and deploy or otherwise verify the repository-backed version. Record any temporary divergence and its resolution.
+- **Keep access and knowledge portable.** The project owner and authorized maintainers must be able to inspect source, deployment history, logs, configuration, and recovery instructions to the extent the hosting platform permits. Do not make routine maintenance dependent on one person or one AI assistant.
+- **Separate source from runtime state.** Secrets, user data, uploads, databases, logs, and other mutable runtime state require appropriate operational handling; they do not belong in source control merely because the repository is authoritative for code.
+- **Document the actual boundary.** State clearly which code is deployed, where it runs, which services and databases it uses, what remains simulated, and what cannot be inspected or changed from the available access level.
+
+The governing principle is simple: **the repository defines the intended system; deployment evidence establishes what is actually running. Both must be checked.**
