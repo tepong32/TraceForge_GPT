@@ -10,6 +10,10 @@
 
 > **What released changes have altered TraceForge?**
 
+## [0.6.1] - 2026-11-10
+### Maintenance
+- Update version_manager to v2.0.1 (preserve leading spaces in git output)
+
 ## [0.6.0] - 2026-08-12
 
 ### Added
